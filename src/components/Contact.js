@@ -55,7 +55,7 @@ const Contact = () => {
               <p>📞 <strong>Phone:</strong> +251 970 025656</p>
               <p>📧 <strong>Email:</strong> info@ahununuexpress.com</p>
               <p>📍 <strong>Address:</strong> 22 golagol, Addis Ababa, Ethiopia</p>
-              <p>🕒 <strong>Hours:</strong> Mon-Sat 8AM-6PM, Sun 9AM-2PM</p>
+              <p>🕒 <strong>Hours:</strong> Mon-Sat 8:30AM-7PM, Sun 8:30AM-12:30PM</p>
             </div>
           </div>
         </div>

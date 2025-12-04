@@ -35,3 +35,6 @@ Thumbs.db
 *.pid
 *.seed
 *.pid.lock
+
+# Local test artifacts and generated files
+testsprite_tests/
