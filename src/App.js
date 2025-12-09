@@ -2,17 +2,20 @@ import React, { useState, useEffect, Suspense } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Routes, Route, useLocation, Navigate } from 'react-router-dom';
 import Header from './components/Header';
-const Hero = React.lazy(() => import('./components/Hero'));
-const About = React.lazy(() => import('./components/About'));
-const Services = React.lazy(() => import('./components/Services'));
-const Tracking = React.lazy(() => import('./components/Tracking'));
-const Quote = React.lazy(() => import('./components/Quote'));
+
+// Import refined components
+const RefinedHero = React.lazy(() => import('./components/RefinedHero'));
+const ModernAboutPage = React.lazy(() => import('./components/ModernAboutPage'));
+const InteractiveServicesShowcase = React.lazy(() => import('./components/InteractiveServicesShowcase'));
+const EnhancedTracking = React.lazy(() => import('./components/EnhancedTracking'));
+const EnhancedQuoteCalculator = React.lazy(() => import('./components/EnhancedQuoteCalculator'));
 const Careers = React.lazy(() => import('./components/Careers'));
 const News = React.lazy(() => import('./components/News'));
-const Contact = React.lazy(() => import('./components/Contact'));
+const EnhancedContactForm = React.lazy(() => import('./components/EnhancedContactForm'));
 const Partners = React.lazy(() => import('./components/Partners'));
 const WarehousePage = React.lazy(() => import('./pages/WarehousePage'));
-import Footer from './components/Footer';
+
+import ModernFooter from './components/ModernFooter';
 import './styles/App.css';
 import ErrorBoundary from './components/ErrorBoundary';
 import Spinner from './components/Spinner';
@@ -62,37 +65,37 @@ const App = () => {
 
   return (
     <div className="app">
-        <ErrorBoundary>
-          <Suspense fallback={<div style={{ position: 'fixed', inset: 0, pointerEvents: 'none' }} />}>
-            <VFXBackground />
-          </Suspense>
-          <Header />
-          <StructuredData />
-          
-          <main className="main-content">
-            <PageTransition routeKey={location.pathname}>
-              <Suspense fallback={<div style={{ display: 'grid', placeItems: 'center', minHeight: '40vh' }}><Spinner size={40} /></div>}>
-                <Routes location={location}>
-                  <Route path="/" element={<Hero />} />
-                  <Route path="/about" element={<About />} />
-                  <Route path="/services" element={<Services />} />
-                  <Route path="/tracking" element={<Tracking />} />
-                  <Route path="/quote" element={<Quote />} />
-                  <Route path="/careers" element={<Careers />} />
-                  <Route path="/news" element={<News />} />
-                  <Route path="/contact" element={<Contact />} />
-                  <Route path="/partners" element={<Partners />} />
-                  <Route path="/warehouse" element={<WarehousePage />} />
-                  <Route path="/home" element={<Navigate to="/" replace />} />
-                  <Route path="*" element={<NotFound />} />
-                </Routes>
-              </Suspense>
-            </PageTransition>
-          </main>
+      <ErrorBoundary>
+        <Suspense fallback={<div style={{ position: 'fixed', inset: 0, pointerEvents: 'none' }} />}>
+          <VFXBackground />
+        </Suspense>
+        <Header />
+        <StructuredData />
+        
+        <main className="main-content">
+          <PageTransition routeKey={location.pathname}>
+            <Suspense fallback={<div style={{ display: 'grid', placeItems: 'center', minHeight: '40vh' }}><Spinner size={40} /></div>}>
+              <Routes location={location}>
+                <Route path="/" element={<RefinedHero />} />
+                <Route path="/about" element={<ModernAboutPage />} />
+                <Route path="/services" element={<InteractiveServicesShowcase />} />
+                <Route path="/tracking" element={<EnhancedTracking />} />
+                <Route path="/quote" element={<EnhancedQuoteCalculator />} />
+                <Route path="/careers" element={<Careers />} />
+                <Route path="/news" element={<News />} />
+                <Route path="/contact" element={<EnhancedContactForm />} />
+                <Route path="/partners" element={<Partners />} />
+                <Route path="/warehouse" element={<WarehousePage />} />
+                <Route path="/home" element={<Navigate to="/" replace />} />
+                <Route path="*" element={<NotFound />} />
+              </Routes>
+            </Suspense>
+          </PageTransition>
+        </main>
 
-          <Footer />
-        </ErrorBoundary>
-      </div>
+        <ModernFooter />
+      </ErrorBoundary>
+    </div>
   );
 };
 
