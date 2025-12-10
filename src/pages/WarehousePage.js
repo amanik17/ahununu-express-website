@@ -61,6 +61,7 @@ function Scene() {
 
 const WarehousePage = () => {
 const [showControls, setShowControls] = useState(false);
+const [isDarkMode] = useState(false);
 
   return (
     <div className="min-h-screen bg-gray-50 text-gray-900">
