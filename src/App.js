@@ -1,4 +1,4 @@
-import React, { useState, useEffect, Suspense } from 'react';
+﻿import React, { useState, useEffect, Suspense } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Routes, Route, useLocation, Navigate } from 'react-router-dom';
 import Header from './components/Header';
@@ -17,6 +17,7 @@ const WarehousePage = React.lazy(() => import('./pages/WarehousePage'));
 
 import ModernFooter from './components/ModernFooter';
 import './styles/App.css';
+import './styles/mobile-enhancements.css';
 import ErrorBoundary from './components/ErrorBoundary';
 import Spinner from './components/Spinner';
 import NotFound from './components/NotFound';
