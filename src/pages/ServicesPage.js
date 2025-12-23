@@ -299,7 +299,7 @@ const ServicesPage = () => {
           </motion.p>
         </div>
         <InteractiveServicesGrid />
-        </motion.div>
+        </motion.section>
       </motion.section>
 
       {/* Call to Action */}

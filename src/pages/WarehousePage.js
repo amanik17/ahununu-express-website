@@ -23,7 +23,7 @@ function Loader() {
   );
 }
 
-function Scene() {
+function Scene({ isDarkMode }) {
   return (
     <Canvas 
       shadows 
@@ -107,7 +107,7 @@ const [isDarkMode] = useState(false);
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           <div className="lg:col-span-2">
             <div className="bg-white dark:bg-gray-800 rounded-xl shadow-xl overflow-hidden h-[600px]">
-              <Scene />
+              <Scene isDarkMode={isDarkMode} />
             </div>
           </div>
           
