@@ -38,3 +38,6 @@ Thumbs.db
 
 # Local test artifacts and generated files
 testsprite_tests/
+
+.vercel
+.env*.local
