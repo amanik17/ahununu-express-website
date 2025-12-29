@@ -111,4 +111,13 @@ module.exports = {
     maxEntrypointSize: 512000,
     maxAssetSize: 512000,
   },
+  devServer: {
+    host: '0.0.0.0',
+    port: 5000,
+    allowedHosts: 'all',
+    historyApiFallback: true,
+    client: {
+      overlay: true,
+    },
+  },
 };
