@@ -3,15 +3,14 @@
   "version": "1.0.0",
   "description": "Ahununu Express - Trusted Express Service Provider",
   "main": "index.js",
-
   "scripts": {
     "start": "webpack serve --mode development --config webpack.config.js",
     "build": "webpack --mode production --config webpack.config.js",
     "install": "npm install --legacy-peer-deps",
     "vercel-build": "npm run build"
   },
-  
   "dependencies": {
+    "@eslint/js": "^9.39.2",
     "@react-spring/three": "^10.0.2",
     "@react-spring/web": "^10.0.2",
     "@react-three/cannon": "^6.6.0",
