@@ -39,7 +39,7 @@ module.exports = {
         use: ['style-loader', 'css-loader'],
       },
       {
-        test: /\.(png|svg|jpg|jpeg|gif|ico)$/i,
+        test: /\.(png|svg|jpg|jpeg|gif|ico|otf)$/i,
         type: 'asset/resource',
         generator: { filename: 'assets/[name][hash][ext]' }
       },
