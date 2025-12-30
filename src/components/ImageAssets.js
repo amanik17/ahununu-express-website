@@ -1,6 +1,7 @@
 // Stock images for Ahununu Express website
 export const stockImages = {
   logo: '/assets/logo_alt.png',
+  footerLogo: '/assets/logo_footer.png',
   // Logistics and delivery images with Ethiopian context
   logistics: {
     truck: 'https://images.unsplash.com/photo-1601584115197-04ecc0da31d8?w=800&q=80', // Delivery truck in Addis Ababa

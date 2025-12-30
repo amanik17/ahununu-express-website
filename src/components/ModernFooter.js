@@ -197,16 +197,9 @@ const ModernFooter = () => {
           {/* Company Info */}
           <div>
             <div style={{
-              display: 'flex',
-              alignItems: 'center',
-              gap: '0.5rem',
-              fontSize: '1.8rem',
-              fontWeight: 800,
-              marginBottom: '1rem',
-              color: '#7fba42'
+              marginBottom: '1.5rem',
             }}>
-              <span>🚚</span>
-              <span>Ahununu Express</span>
+              <img src="/assets/logo_footer.png" alt="Ahununu Logistics Logo" style={{ height: '60px', objectFit: 'contain' }} />
             </div>
             <p style={{
               color: '#94a3b8',

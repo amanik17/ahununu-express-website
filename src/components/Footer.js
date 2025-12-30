@@ -22,9 +22,9 @@ const Footer = () => {
       <div className="container">
         <div className="grid grid-4">
           <div>
-            <h3 style={{ color: 'var(--primary-green)', marginBottom: '1rem' }}>
-              🚚 Ahununu Express
-            </h3>
+            <div style={{ marginBottom: '1rem' }}>
+              <img src="/assets/logo_footer.png" alt="Ahununu Logistics Logo" style={{ height: '40px', objectFit: 'contain' }} />
+            </div>
             <p>Your trusted express service provider across Ethiopia.</p>
           </div>
           <div>
