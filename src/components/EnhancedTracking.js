@@ -66,7 +66,7 @@ const EnhancedTracking = () => {
         weight: '2.5 kg',
         dimensions: '30x20x15 cm',
         service: 'Express Delivery',
-        sender: 'Addis Ababa',
+        sender: 'Abebe Bikila',
         recipient: 'Bahir Dar'
       }
     }
@@ -400,12 +400,6 @@ const EnhancedTracking = () => {
                 }}>
                   Tracking Timeline
                 </h2>
-
-                <div style={{ marginBottom: '2rem', padding: '1rem', background: '#f8fafc', borderRadius: '12px', border: '1px solid #e2e8f0' }}>
-                  <p style={{ fontSize: '0.9rem', color: '#64748b' }}>
-                    <strong>Sender:</strong> {result.packageDetails.sender}
-                  </p>
-                </div>
 
                 <div style={{ position: 'relative' }}>
                   <div style={{
