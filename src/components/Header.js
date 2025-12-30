@@ -29,8 +29,7 @@ const Header = () => {
       <div className="header-content">
         <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
           <Link to="/" className="logo">
-            <img src="/assets/logo.png" alt="Ahununu Express Logo" style={{ height: '40px', marginRight: '10px' }} />
-            Ahununu Express
+            <img src="/assets/logo_alt.png" alt="Ahununu Express Logo" style={{ height: '50px' }} />
           </Link>
         </motion.div>
 
