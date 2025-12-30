@@ -1,8 +1,8 @@
 /* Global Styles */
 @font-face {
   font-family: 'Grift';
-  src: url('../fonts/Grift-Regular.otf') format('opentype');
-  font-weight: normal;
+  src: url('../fonts/Grift-SemiBold.otf') format('opentype');
+  font-weight: 600;
   font-style: normal;
   font-display: swap;
 }
@@ -299,7 +299,7 @@ body {
   -webkit-backdrop-filter: blur(15px);
   border-bottom: 1px solid rgba(226, 232, 240, 0.5);
   z-index: 1000;
-  padding: 0.75rem 0;
+  padding: 0.5rem 0;
   transition: all 0.3s ease;
 }
 
@@ -312,9 +312,9 @@ body {
 }
 
 .header-content {
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0 3rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -332,17 +332,17 @@ body {
 
 .nav {
   display: flex;
-  gap: 2rem;
+  gap: 1.25rem;
 }
 
 .nav-link {
   color: var(--text-dark);
   text-decoration: none;
   font-family: 'Grift', sans-serif;
-  font-weight: 500;
-  font-size: 1.1rem;
-  letter-spacing: 0.02em;
-  padding: 0.5rem 1rem;
+  font-weight: 600;
+  font-size: 1.05rem;
+  letter-spacing: 0.01em;
+  padding: 0.5rem 0.85rem;
   border-radius: var(--border-radius);
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
