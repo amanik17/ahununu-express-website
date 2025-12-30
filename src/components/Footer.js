@@ -45,10 +45,24 @@ const Footer = () => {
           </div>
           <div>
             <h4>Support</h4>
-            <ul style={{ listStyle: 'none', lineHeight: '2' }}>
+            <ul style={{ listStyle: 'none', lineHeight: '1.6' }}>
               <li><Link to="/tracking" style={linkStyle}>Track Package</Link></li>
               <li><Link to="/contact" style={linkStyle}>Contact Us</Link></li>
               <li><Link to="/quote" style={linkStyle}>Get Quote</Link></li>
+              <li style={{ marginTop: '0.5rem' }}>
+                <a href="tel:+251970025656" style={linkStyle}>+251 970 025656</a>
+              </li>
+              <li>
+                <a href="tel:+251953563356" style={linkStyle}>+251 953 563356</a>
+              </li>
+              <li>
+                <a href="tel:8414" style={{ ...linkStyle, fontWeight: 'bold' }}>8414</a>
+              </li>
+              <li style={{ marginTop: '0.5rem' }}>
+                <a href="https://maps.app.goo.gl/cFxkaWWpgfkZPTFv8" target="_blank" rel="noopener noreferrer" style={linkStyle}>
+                  22 Golagol, Addis Ababa Ethiopia
+                </a>
+              </li>
             </ul>
           </div>
         </div>

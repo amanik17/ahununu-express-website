@@ -340,8 +340,14 @@ const ModernFooter = () => {
               📞 Call Us
             </h5>
             <p style={{ color: '#94a3b8', marginBottom: '0.25rem' }}>
-              <a href="tel:+251970025656" style={{ color: '#7fba42', textDecoration: 'none' }}>
+              <a href="tel:+251970025656" style={{ color: '#7fba42', textDecoration: 'none', display: 'block' }}>
                 +251 970 025656
+              </a>
+              <a href="tel:+251953563356" style={{ color: '#7fba42', textDecoration: 'none', display: 'block' }}>
+                +251 953 563356
+              </a>
+              <a href="tel:8414" style={{ color: '#7fba42', textDecoration: 'none', display: 'block', fontWeight: 'bold' }}>
+                Short Code: 8414
               </a>
             </p>
             <p style={{ color: '#94a3b8', fontSize: '0.9rem' }}>Mon-Sat: 8AM-6PM, Sun: 9AM-2PM</p>
@@ -364,9 +370,10 @@ const ModernFooter = () => {
               📍 Visit Us
             </h5>
             <p style={{ color: '#94a3b8', marginBottom: '0.25rem' }}>
-              22 Golagol, Addis Ababa
+              <a href="https://maps.app.goo.gl/cFxkaWWpgfkZPTFv8" target="_blank" rel="noopener noreferrer" style={{ color: '#7fba42', textDecoration: 'none' }}>
+                22 Golagol, Addis Ababa Ethiopia
+              </a>
             </p>
-            <p style={{ color: '#94a3b8', fontSize: '0.9rem' }}>Ethiopia</p>
           </div>
 
           <div>

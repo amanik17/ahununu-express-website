@@ -1,0 +1,106 @@
+{
+  "colorScheme": "light",
+  "fonts": [
+    {
+      "family": "Roboto",
+      "count": 49
+    },
+    {
+      "family": "Arial",
+      "count": 49
+    },
+    {
+      "family": "sans-serif",
+      "count": 49
+    },
+    {
+      "family": "Google Sans",
+      "count": 13
+    }
+  ],
+  "colors": {
+    "primary": "#007B8B",
+    "accent": "#D3F7FF",
+    "background": "#F2F2F2",
+    "textPrimary": "#1F1F1F",
+    "link": "#D3F7FF"
+  },
+  "typography": {
+    "fontFamilies": {
+      "primary": "Roboto",
+      "heading": "Google Sans"
+    },
+    "fontStacks": {
+      "body": [
+        "Roboto",
+        "Arial",
+        "sans-serif"
+      ],
+      "heading": [
+        "Google Sans",
+        "Roboto",
+        "Arial",
+        "sans-serif"
+      ],
+      "paragraph": [
+        "Roboto",
+        "Arial",
+        "sans-serif"
+      ]
+    },
+    "fontSizes": {
+      "h1": "22px",
+      "h2": "16px",
+      "body": "16px"
+    }
+  },
+  "spacing": {
+    "baseUnit": 4,
+    "borderRadius": "8px"
+  },
+  "components": {
+    "input": {
+      "background": "transparent",
+      "textColor": "#1F1F1F",
+      "borderColor": null,
+      "borderRadius": "0px",
+      "borderRadiusCorners": {
+        "topLeft": "0px",
+        "topRight": "0px",
+        "bottomRight": "0px",
+        "bottomLeft": "0px"
+      },
+      "shadow": "none"
+    }
+  },
+  "images": {
+    "logo": "https://www.google.com/images/branding/mapslogo/1x/GoogleMaps_Logo_WithLightOutline.png",
+    "favicon": "https://www.google.com/images/branding/product/ico/maps15_bnuw3a_32dp.ico",
+    "ogImage": "File saved at: attached_assets/ogImage.jpg"
+  },
+  "__framework_hints": [],
+  "__llm_logo_reasoning": {
+    "selectedIndex": 0,
+    "reasoning": "Logo rejected: Low confidence. Heuristic fallback: Weak indicators: no link (brand logos usually link to homepage, penalty), visible, src contains logo, reasonable size, body location without header (penalty). Score: 0. LLM validation recommended (close scores: top=0, second=-28)",
+    "confidence": 0.30000000000000004,
+    "rejected": true
+  },
+  "__llm_button_reasoning": {
+    "primary": {
+      "index": -1,
+      "text": "N/A",
+      "reasoning": "LLM failed"
+    },
+    "secondary": {
+      "index": -1,
+      "text": "N/A",
+      "reasoning": "LLM failed"
+    },
+    "confidence": 0
+  },
+  "confidence": {
+    "buttons": 0,
+    "colors": 0,
+    "overall": 0
+  }
+}
