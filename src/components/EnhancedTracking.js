@@ -20,7 +20,7 @@ const EnhancedTracking = () => {
   }, []);
 
   const mockTrackingData = {
-    'AE123456789': {
+    'AWB123456789': {
       status: 'In Transit',
       estimatedDelivery: '2025-12-03',
       currentLocation: 'Addis Ababa Distribution Center',
@@ -169,7 +169,7 @@ const EnhancedTracking = () => {
                 type="text"
                 value={trackingNumber}
                 onChange={(e) => setTrackingNumber(e.target.value)}
-                placeholder="Enter tracking number (e.g., AE123456789)"
+                placeholder="Enter tracking number (e.g., AWB123456789)"
                 onKeyPress={(e) => e.key === 'Enter' && handleSubmit(e)}
                 style={{
                   flex: 1,

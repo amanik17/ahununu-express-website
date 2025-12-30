@@ -32,7 +32,7 @@ const Tracking = () => {
             <input
               type="text"
               className="form-input"
-              placeholder="Enter tracking number (try: AE123456789)"
+              placeholder="Enter tracking number (try: AWB123456789)"
               value={trackingNumber}
               onChange={(e) => setTrackingNumber(e.target.value)}
             />
