@@ -57,6 +57,20 @@ const RefinedHero = () => {
     }
   };
 
+  const partners = [
+    { name: 'DHL', logo: 'https://logo.clearbit.com/dhl.com' },
+    { name: 'FedEx', logo: 'https://logo.clearbit.com/fedex.com' },
+    { name: 'UPS', logo: 'https://logo.clearbit.com/ups.com' },
+    { name: 'Ethiopian Airlines', logo: 'https://logo.clearbit.com/ethiopianairlines.com' },
+    { name: 'CBE', logo: 'https://logo.clearbit.com/combanketh.et' },
+    // Duplicate for seamless loop
+    { name: 'DHL', logo: 'https://logo.clearbit.com/dhl.com' },
+    { name: 'FedEx', logo: 'https://logo.clearbit.com/fedex.com' },
+    { name: 'UPS', logo: 'https://logo.clearbit.com/ups.com' },
+    { name: 'Ethiopian Airlines', logo: 'https://logo.clearbit.com/ethiopianairlines.com' },
+    { name: 'CBE', logo: 'https://logo.clearbit.com/combanketh.et' }
+  ];
+
   return (
     <div style={{
       minHeight: '100vh',
@@ -477,6 +491,61 @@ const RefinedHero = () => {
             </motion.div>
           ))}
         </motion.div>
+
+        {/* Partners Slider Section */}
+        <div style={{
+          width: '100%',
+          overflow: 'hidden',
+          padding: '2rem 0',
+          position: 'relative',
+          background: 'rgba(255, 255, 255, 0.5)',
+          borderRadius: '16px',
+          marginTop: '2rem'
+        }}>
+          <div style={{
+            textAlign: 'center',
+            marginBottom: '1rem',
+            fontSize: '0.9rem',
+            color: '#64748b',
+            fontWeight: 600,
+            textTransform: 'uppercase',
+            letterSpacing: '1px'
+          }}>
+            Trusted By Leading Companies
+          </div>
+          <div style={{
+            display: 'flex',
+            width: '200%',
+            animation: 'scroll 20s linear infinite',
+          }}>
+            <style>{`
+              @keyframes scroll {
+                0% { transform: translateX(0); }
+                100% { transform: translateX(-50%); }
+              }
+            `}</style>
+            <div style={{
+              display: 'flex',
+              justifyContent: 'space-around',
+              width: '100%',
+              alignItems: 'center'
+            }}>
+              {partners.map((partner, index) => (
+                <img
+                  key={index}
+                  src={partner.logo}
+                  alt={partner.name}
+                  style={{
+                    height: '40px',
+                    filter: 'grayscale(100%)',
+                    opacity: 0.6,
+                    margin: '0 2rem'
+                  }}
+                />
+              ))}
+            </div>
+          </div>
+        </div>
 
         {/* Scroll Indicator */}
         <motion.div
