@@ -56,11 +56,12 @@ const ModernFooter = () => {
     { icon: '▶️', label: 'YouTube', href: '#', color: '#FF0000' }
   ];
 
-  const trustBadges = [
-    { icon: '✅', text: 'ISO 9001 Certified' },
-    { icon: '🔒', text: 'Secure Payments' },
-    { icon: '⭐', text: '4.9/5 Rating' },
-    { icon: '🏆', text: 'Award Winning' }
+  const partners = [
+    { name: 'DHL', logo: 'https://logo.clearbit.com/dhl.com' },
+    { name: 'FedEx', logo: 'https://logo.clearbit.com/fedex.com' },
+    { name: 'UPS', logo: 'https://logo.clearbit.com/ups.com' },
+    { name: 'Ethiopian Airlines', logo: 'https://logo.clearbit.com/ethiopianairlines.com' },
+    { name: 'CBE', logo: 'https://logo.clearbit.com/combanketh.et' }
   ];
 
   return (
@@ -209,27 +210,39 @@ const ModernFooter = () => {
               Ethiopia's trusted logistics partner, delivering excellence across 85+ cities with speed, security, and reliability.
             </p>
 
-            {/* Trust Badges */}
-            <div style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(2, 1fr)',
-              gap: '0.75rem'
-            }}>
-              {trustBadges.map((badge, index) => (
-                <div
-                  key={index}
-                  style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: '0.5rem',
-                    fontSize: '0.85rem',
-                    color: '#94a3b8'
-                  }}
-                >
-                  <span>{badge.icon}</span>
-                  <span>{badge.text}</span>
-                </div>
-              ))}
+            {/* Partners Section */}
+            <div style={{ marginTop: '2rem' }}>
+              <h5 style={{ fontSize: '0.9rem', color: '#cbd5e1', marginBottom: '1rem', fontWeight: 600 }}>
+                Our Partners
+              </h5>
+              <div style={{
+                display: 'flex',
+                flexWrap: 'wrap',
+                gap: '1.5rem',
+                alignItems: 'center'
+              }}>
+                {partners.map((partner, index) => (
+                  <img
+                    key={index}
+                    src={partner.logo}
+                    alt={partner.name}
+                    style={{
+                      height: '30px',
+                      filter: 'grayscale(100%) brightness(200%)',
+                      opacity: 0.7,
+                      transition: 'all 0.3s ease'
+                    }}
+                    onMouseOver={(e) => {
+                      e.target.style.filter = 'none';
+                      e.target.style.opacity = 1;
+                    }}
+                    onMouseOut={(e) => {
+                      e.target.style.filter = 'grayscale(100%) brightness(200%)';
+                      e.target.style.opacity = 0.7;
+                    }}
+                  />
+                ))}
+              </div>
             </div>
           </div>
 
