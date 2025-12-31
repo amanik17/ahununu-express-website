@@ -45,12 +45,20 @@ const Header = () => {
           ))}
         </nav>
 
-        <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
+        <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
           <select
             aria-label={t('actions.language')}
             value={locale}
             onChange={(e) => setLocale(e.target.value)}
-            className="select select-bordered select-sm max-w-xs"
+            style={{
+              padding: '0.5rem',
+              borderRadius: '8px',
+              border: '1px solid #e2e8f0',
+              background: 'white',
+              fontSize: '0.9rem',
+              outline: 'none',
+              cursor: 'pointer'
+            }}
           >
             <option value="en">English</option>
             <option value="am">Amharic</option>

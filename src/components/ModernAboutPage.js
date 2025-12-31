@@ -28,9 +28,9 @@ const ModernAboutPage = () => {
     },
     {
       year: 2020,
-      title: 'ISO Certification',
-      description: 'Achieved ISO 9001:2015 certification, demonstrating our commitment to quality.',
-      icon: '🏆',
+      title: 'Global Partnerships',
+      description: 'Established strategic partnerships with international logistics leaders to enhance our cross-border capabilities.',
+      icon: '🤝',
       color: '#E94F64'
     },
     {
