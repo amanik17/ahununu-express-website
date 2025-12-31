@@ -159,7 +159,7 @@ const RefinedHero = () => {
               }}
             >
               <span>✨</span>
-              Ethiopia's #1 Express Service
+              Ethiopia's #1 Logistics Service
             </motion.div>
 
             {/* Main Heading */}
@@ -174,7 +174,7 @@ const RefinedHero = () => {
                 background: 'linear-gradient(135deg, #7fba42 0%, #6ba036 100%)',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent'
-              }}>Trusted Express</span>
+              }}>Trusted Logistics</span>
               <br />Service Provider
             </h1>
 
