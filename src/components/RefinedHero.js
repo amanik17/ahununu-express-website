@@ -58,17 +58,23 @@ const RefinedHero = () => {
   };
 
   const partners = [
-    { name: 'DHL', logo: 'https://logo.clearbit.com/dhl.com' },
-    { name: 'FedEx', logo: 'https://logo.clearbit.com/fedex.com' },
-    { name: 'UPS', logo: 'https://logo.clearbit.com/ups.com' },
-    { name: 'Ethiopian Airlines', logo: 'https://logo.clearbit.com/ethiopianairlines.com' },
-    { name: 'CBE', logo: 'https://logo.clearbit.com/combanketh.et' },
+    { name: 'Ethiopian Airlines', logo: '/assets/partner_ethiopian.png' },
+    { name: 'Moenco', logo: '/assets/partner_moenco.png' },
+    { name: 'BGI Ethiopia', logo: '/assets/partner_bgi.png' },
+    { name: 'Habesha', logo: '/assets/partner_habesha.png' },
+    { name: 'Safaricom', logo: '/assets/partner_safaricom.png' },
+    { name: 'Dashin Bank', logo: '/assets/partner_dashin.png' },
+    { name: 'GIZ', logo: '/assets/partner_giz.png' },
+    { name: 'MSF', logo: '/assets/partner_msf.png' },
     // Duplicate for seamless loop
-    { name: 'DHL', logo: 'https://logo.clearbit.com/dhl.com' },
-    { name: 'FedEx', logo: 'https://logo.clearbit.com/fedex.com' },
-    { name: 'UPS', logo: 'https://logo.clearbit.com/ups.com' },
-    { name: 'Ethiopian Airlines', logo: 'https://logo.clearbit.com/ethiopianairlines.com' },
-    { name: 'CBE', logo: 'https://logo.clearbit.com/combanketh.et' }
+    { name: 'Ethiopian Airlines', logo: '/assets/partner_ethiopian.png' },
+    { name: 'Moenco', logo: '/assets/partner_moenco.png' },
+    { name: 'BGI Ethiopia', logo: '/assets/partner_bgi.png' },
+    { name: 'Habesha', logo: '/assets/partner_habesha.png' },
+    { name: 'Safaricom', logo: '/assets/partner_safaricom.png' },
+    { name: 'Dashin Bank', logo: '/assets/partner_dashin.png' },
+    { name: 'GIZ', logo: '/assets/partner_giz.png' },
+    { name: 'MSF', logo: '/assets/partner_msf.png' }
   ];
 
   return (
