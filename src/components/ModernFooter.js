@@ -345,44 +345,6 @@ const ModernFooter = () => {
               </a>
             </p>
           </div>
-
-          <div>
-            <h5 style={{ fontSize: '1rem', fontWeight: 600, marginBottom: '0.75rem', color: '#cbd5e1' }}>
-              📱 Download App
-            </h5>
-            <div style={{ display: 'flex', gap: '0.5rem' }}>
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                style={{
-                  padding: '0.5rem 1rem',
-                  background: '#334155',
-                  color: 'white',
-                  border: '1px solid #475569',
-                  borderRadius: '8px',
-                  fontSize: '0.85rem',
-                  cursor: 'pointer'
-                }}
-              >
-                🍎 iOS
-              </motion.button>
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                style={{
-                  padding: '0.5rem 1rem',
-                  background: '#334155',
-                  color: 'white',
-                  border: '1px solid #475569',
-                  borderRadius: '8px',
-                  fontSize: '0.85rem',
-                  cursor: 'pointer'
-                }}
-              >
-                🤖 Android
-              </motion.button>
-            </div>
-          </div>
         </div>
 
         {/* Social Links & Bottom Bar */}
