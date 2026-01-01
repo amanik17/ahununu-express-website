@@ -35,14 +35,14 @@ const EnhancedContactForm = () => {
     {
       icon: '📧',
       title: 'Email',
-      details: 'info@ahununuexpress.com',
+      details: 'info@ahununulogistics.com',
       subtext: 'We reply within 24 hours',
       color: '#7fba42'
     },
     {
       icon: '📍',
       title: 'Visit Us',
-      details: '22 Golagol, Addis Ababa',
+      details: 'Ahununu Logistics HQ',
       subtext: 'Ethiopia',
       color: '#F5A623'
     },
@@ -578,13 +578,15 @@ const EnhancedContactForm = () => {
 
               {/* Additional Info Card */}
               <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
-                {/* Map Placeholder */}
+                {/* Map Section */}
                 <div style={{
                   background: 'white',
                   borderRadius: '24px',
                   padding: '2rem',
                   boxShadow: '0 20px 60px rgba(0,0,0,0.08)',
-                  minHeight: '300px'
+                  minHeight: '400px',
+                  display: 'flex',
+                  flexDirection: 'column'
                 }}>
                   <h3 style={{
                     fontSize: '1.5rem',
@@ -595,22 +597,50 @@ const EnhancedContactForm = () => {
                     Visit Our Office
                   </h3>
                   <div style={{
-                    background: 'linear-gradient(135deg, #7fba42 0%, #6ba036 100%)',
+                    flex: 1,
+                    minHeight: '250px',
                     borderRadius: '16px',
-                    height: '200px',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    fontSize: '4rem',
-                    marginBottom: '1rem'
+                    overflow: 'hidden',
+                    marginBottom: '1rem',
+                    border: '1px solid #e2e8f0'
                   }}>
-                    🗺️
+                    <iframe
+                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3940.551848574345!2d38.7845!3d9.0145!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x164b850000000001%3A0x0!2zMjIgR29sYWdvbCwgQWRkaXMgQWJhYmEsIEV0aGlvcGlh!5e0!3m2!1sen!2set!4v1234567890"
+                      width="100%"
+                      height="100%"
+                      style={{ border: 0 }}
+                      allowFullScreen=""
+                      loading="lazy"
+                      referrerPolicy="no-referrer-when-downgrade"
+                      title="Ahununu Logistics HQ Location"
+                    ></iframe>
                   </div>
-                  <p style={{ color: '#64748b', lineHeight: 1.6 }}>
-                    <strong>Ahununu Express HQ</strong><br />
-                    22 Golagol, Addis Ababa<br />
-                    Ethiopia
-                  </p>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
+                    <p style={{ color: '#64748b', lineHeight: 1.6, margin: 0 }}>
+                      <strong>Ahununu Logistics HQ</strong><br />
+                      22 Golagol, Addis Ababa<br />
+                      Ethiopia
+                    </p>
+                    <motion.a
+                      href="https://maps.app.goo.gl/cFxkaWWpgfkZPTFv8"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                      style={{
+                        padding: '0.5rem 1rem',
+                        background: '#7fba42',
+                        color: 'white',
+                        textDecoration: 'none',
+                        borderRadius: '8px',
+                        fontSize: '0.9rem',
+                        fontWeight: 600,
+                        boxShadow: '0 4px 12px rgba(127, 186, 66, 0.2)'
+                      }}
+                    >
+                      Open in Maps
+                    </motion.a>
+                  </div>
                 </div>
 
                 {/* Why Choose Us */}
