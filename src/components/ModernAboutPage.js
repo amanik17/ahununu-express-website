@@ -89,11 +89,11 @@ const ModernAboutPage = () => {
   ];
 
   const stats = [
-    { number: '10+', label: 'Years Experience', icon: '📅', color: '#7fba42' },
+    { number: '8+', label: 'Years Experience', icon: '📅', color: '#7fba42' },
     { number: '85+', label: 'Cities Covered', icon: '🏙️', color: '#4A90E2' },
     { number: '500+', label: 'Vehicles', icon: '🚛', color: '#F5A623' },
-    { number: '1000+', label: 'Team Members', icon: '👥', color: '#E94F64' },
-    { number: '15K+', label: 'Daily Deliveries', icon: '📦', color: '#10B981' },
+    { number: '150+', label: 'Team Members', icon: '👥', color: '#E94F64' },
+    { number: '1.5K+', label: 'Daily Deliveries', icon: '📦', color: '#10B981' },
     { number: '98%', label: 'Customer Satisfaction', icon: '⭐', color: '#8B5CF6' }
   ];
 
