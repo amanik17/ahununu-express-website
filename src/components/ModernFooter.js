@@ -47,15 +47,6 @@ const ModernFooter = () => {
     ]
   };
 
-  const socialLinks = [
-    { icon: '📘', label: 'Facebook', href: '#', color: '#1877F2' },
-    { icon: '🐦', label: 'Twitter', href: '#', color: '#1DA1F2' },
-    { icon: '💼', label: 'LinkedIn', href: '#', color: '#0A66C2' },
-    { icon: '📸', label: 'Instagram', href: '#', color: '#E4405F' },
-    { icon: '📱', label: 'TikTok', href: '#', color: '#000000' },
-    { icon: '▶️', label: 'YouTube', href: '#', color: '#FF0000' }
-  ];
-
   return (
     <footer style={{
       background: '#1e293b',
@@ -328,8 +319,8 @@ const ModernFooter = () => {
               📧 Email Us
             </h5>
             <p style={{ color: '#94a3b8', marginBottom: '0.25rem' }}>
-              <a href="mailto:info@ahununuexpress.com" style={{ color: '#7fba42', textDecoration: 'none' }}>
-                info@ahununuexpress.com
+              <a href="mailto:info@ahununulogistics.com" style={{ color: '#7fba42', textDecoration: 'none' }}>
+                info@ahununulogistics.com
               </a>
             </p>
             <p style={{ color: '#94a3b8', fontSize: '0.9rem' }}>We reply within 24 hours</p>
@@ -347,7 +338,7 @@ const ModernFooter = () => {
           </div>
         </div>
 
-        {/* Social Links & Bottom Bar */}
+        {/* Bottom Bar & Legal Links */}
         <div style={{
           display: 'flex',
           justifyContent: 'space-between',
@@ -356,40 +347,9 @@ const ModernFooter = () => {
           flexWrap: 'wrap',
           gap: '1.5rem'
         }}>
-          {/* Social Links */}
-          <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
-            {socialLinks.map((social, index) => (
-              <motion.a
-                key={index}
-                href={social.href}
-                whileHover={{ scale: 1.2, rotate: 5 }}
-                whileTap={{ scale: 0.9 }}
-                style={{
-                  width: '48px',
-                  height: '48px',
-                  background: '#334155',
-                  borderRadius: '12px',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  fontSize: '1.5rem',
-                  textDecoration: 'none',
-                  border: '1px solid #475569',
-                  transition: 'all 0.3s ease'
-                }}
-                onMouseOver={(e) => {
-                  e.currentTarget.style.background = social.color;
-                  e.currentTarget.style.borderColor = social.color;
-                }}
-                onMouseOut={(e) => {
-                  e.currentTarget.style.background = '#334155';
-                  e.currentTarget.style.borderColor = '#475569';
-                }}
-                aria-label={social.label}
-              >
-                {social.icon}
-              </motion.a>
-            ))}
+          {/* Copyright Info */}
+          <div style={{ color: '#94a3b8', fontSize: '0.9rem' }}>
+            © {new Date().getFullYear()} Ahununu Logistics. All rights reserved.
           </div>
 
           {/* Legal Links */}
@@ -417,19 +377,17 @@ const ModernFooter = () => {
           </div>
         </div>
 
-        {/* Copyright */}
+        {/* Bottom Tagline */}
         <div style={{
           borderTop: '1px solid #334155',
           paddingTop: '2rem',
           paddingBottom: '2rem',
           textAlign: 'center',
           color: '#94a3b8',
-          fontSize: '0.9rem'
+          fontSize: '0.85rem',
+          opacity: 0.8
         }}>
-          <p style={{ marginBottom: '0.5rem' }}>
-            © {new Date().getFullYear()} Ahununu Express. All rights reserved.
-          </p>
-          <p style={{ fontSize: '0.85rem', opacity: 0.8 }}>
+          <p>
             Made with 💚 in Ethiopia | Proudly serving 85+ cities nationwide
           </p>
         </div>
