@@ -10,8 +10,8 @@ const InteractiveServicesShowcase = () => {
       id: 'road-freight',
       title: 'Road Freight',
       icon: '🚛',
-      color: '#7fba42',
-      gradient: 'linear-gradient(135deg, #7fba42 0%, #6ba036 100%)',
+      color: '#127A6A',
+      gradient: 'linear-gradient(135deg, #127A6A 0%, #0e6356 100%)',
       tagline: 'Ground Transportation Excellence',
       description: 'Comprehensive ground transportation solutions for all your cargo needs across Ethiopia.',
       features: [
@@ -185,7 +185,7 @@ const InteractiveServicesShowcase = () => {
           <h1 style={{
             fontSize: '3rem',
             fontWeight: 800,
-            background: 'linear-gradient(135deg, #7fba42 0%, #6ba036 100%)',
+            background: 'linear-gradient(135deg, #127A6A 0%, #0e6356 100%)',
             WebkitBackgroundClip: 'text',
             WebkitTextFillColor: 'transparent',
             marginBottom: '0.5rem'

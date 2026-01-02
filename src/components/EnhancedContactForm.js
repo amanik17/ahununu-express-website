@@ -164,7 +164,7 @@ const EnhancedContactForm = () => {
           <h1 style={{
             fontSize: '3rem',
             fontWeight: 800,
-            background: 'linear-gradient(135deg, #7fba42 0%, #6ba036 100%)',
+            background: 'linear-gradient(135deg, #127A6A 0%, #0e6356 100%)',
             WebkitBackgroundClip: 'text',
             WebkitTextFillColor: 'transparent',
             marginBottom: '0.5rem'
@@ -364,7 +364,7 @@ const EnhancedContactForm = () => {
                         outline: 'none',
                         transition: 'all 0.3s ease'
                       }}
-                      onFocus={(e) => !errors.name && (e.target.style.borderColor = '#7fba42')}
+                      onFocus={(e) => !errors.name && (e.target.style.borderColor = '#127A6A')}
                       onBlur={(e) => !errors.name && (e.target.style.borderColor = '#e2e8f0')}
                     />
                     {errors.name && (
@@ -399,7 +399,7 @@ const EnhancedContactForm = () => {
                         outline: 'none',
                         transition: 'all 0.3s ease'
                       }}
-                      onFocus={(e) => !errors.email && (e.target.style.borderColor = '#7fba42')}
+                      onFocus={(e) => !errors.email && (e.target.style.borderColor = '#127A6A')}
                       onBlur={(e) => !errors.email && (e.target.style.borderColor = '#e2e8f0')}
                     />
                     {errors.email && (
@@ -434,7 +434,7 @@ const EnhancedContactForm = () => {
                         outline: 'none',
                         transition: 'all 0.3s ease'
                       }}
-                      onFocus={(e) => !errors.phone && (e.target.style.borderColor = '#7fba42')}
+                      onFocus={(e) => !errors.phone && (e.target.style.borderColor = '#127A6A')}
                       onBlur={(e) => !errors.phone && (e.target.style.borderColor = '#e2e8f0')}
                     />
                     {errors.phone && (
@@ -468,10 +468,10 @@ const EnhancedContactForm = () => {
                           onClick={() => handleInputChange('subject', subject.value)}
                           style={{
                             padding: '0.75rem',
-                            border: formData.subject === subject.value ? '2px solid #7fba42' : '2px solid #e2e8f0',
+                            border: formData.subject === subject.value ? '2px solid #127A6A' : '2px solid #e2e8f0',
                             borderRadius: '12px',
                             cursor: 'pointer',
-                            background: formData.subject === subject.value ? 'rgba(127, 186, 66, 0.05)' : 'white',
+                            background: formData.subject === subject.value ? 'rgba(18, 122, 106, 0.05)' : 'white',
                             display: 'flex',
                             alignItems: 'center',
                             gap: '0.5rem',
@@ -518,7 +518,7 @@ const EnhancedContactForm = () => {
                         transition: 'all 0.3s ease',
                         fontFamily: 'inherit'
                       }}
-                      onFocus={(e) => !errors.message && (e.target.style.borderColor = '#7fba42')}
+                      onFocus={(e) => !errors.message && (e.target.style.borderColor = '#127A6A')}
                       onBlur={(e) => !errors.message && (e.target.style.borderColor = '#e2e8f0')}
                     />
                     {errors.message && (
@@ -540,7 +540,7 @@ const EnhancedContactForm = () => {
                     style={{
                       width: '100%',
                       padding: '1.25rem',
-                      background: isSubmitting ? '#94a3b8' : 'linear-gradient(135deg, #7fba42 0%, #6ba036 100%)',
+                      background: isSubmitting ? '#94a3b8' : 'linear-gradient(135deg, #127A6A 0%, #0e6356 100%)',
                       color: 'white',
                       border: 'none',
                       borderRadius: '12px',
@@ -551,7 +551,7 @@ const EnhancedContactForm = () => {
                       alignItems: 'center',
                       justifyContent: 'center',
                       gap: '0.5rem',
-                      boxShadow: '0 4px 12px rgba(127, 186, 66, 0.3)'
+                      boxShadow: '0 4px 12px rgba(18, 122, 106, 0.3)'
                     }}
                   >
                     {isSubmitting ? (
@@ -778,7 +778,7 @@ const EnhancedContactForm = () => {
                   onClick={() => setActiveTab('form')}
                   style={{
                     padding: '0.75rem 2rem',
-                    background: 'linear-gradient(135deg, #7fba42 0%, #6ba036 100%)',
+                    background: 'linear-gradient(135deg, #127A6A 0%, #0e6356 100%)',
                     color: 'white',
                     border: 'none',
                     borderRadius: '12px',

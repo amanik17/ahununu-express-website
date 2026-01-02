@@ -56,7 +56,7 @@ const ModernFooter = () => {
       <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 2rem' }}>
         {/* Newsletter Section */}
         <div style={{
-          background: 'linear-gradient(135deg, #7fba42 0%, #6ba036 100%)',
+          background: 'linear-gradient(135deg, #127A6A 0%, #0e6356 100%)',
           borderRadius: '24px',
           padding: '3rem',
           marginBottom: '4rem',
@@ -127,7 +127,7 @@ const ModernFooter = () => {
                     style={{
                       padding: '1rem 2rem',
                       background: 'white',
-                      color: '#7fba42',
+                      color: '#127A6A',
                       border: 'none',
                       borderRadius: '12px',
                       fontSize: '1rem',
@@ -215,7 +215,7 @@ const ModernFooter = () => {
                       transition: 'color 0.2s ease',
                       display: 'inline-block'
                     }}
-                    onMouseOver={(e) => e.target.style.color = '#7fba42'}
+                    onMouseOver={(e) => e.target.style.color = '#127A6A'}
                     onMouseOut={(e) => e.target.style.color = '#94a3b8'}
                   >
                     {link.label}
@@ -246,7 +246,7 @@ const ModernFooter = () => {
                       transition: 'color 0.2s ease',
                       display: 'inline-block'
                     }}
-                    onMouseOver={(e) => e.target.style.color = '#7fba42'}
+                    onMouseOver={(e) => e.target.style.color = '#127A6A'}
                     onMouseOut={(e) => e.target.style.color = '#94a3b8'}
                   >
                     {link.label}
@@ -277,7 +277,7 @@ const ModernFooter = () => {
                       transition: 'color 0.2s ease',
                       display: 'inline-block'
                     }}
-                    onMouseOver={(e) => e.target.style.color = '#7fba42'}
+                    onMouseOver={(e) => e.target.style.color = '#127A6A'}
                     onMouseOut={(e) => e.target.style.color = '#94a3b8'}
                   >
                     {link.label}
