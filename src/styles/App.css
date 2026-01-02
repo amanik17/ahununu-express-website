@@ -9,6 +9,7 @@
 
 :root {
   --primary-green: #127A6A;
+  --secondary-green: #aed580;
   --primary-green-dark: #0e6356;
   --primary-green-light: #18a38d;
   --background-light: #f8fafc;
@@ -99,7 +100,7 @@ body {
 .pulse-circle {
   position: absolute;
   border-radius: 50%;
-  background: rgba(127, 186, 66, 0.1);
+  background: rgba(174, 213, 128, 0.1);
   transform: translate(-50%, -50%);
   pointer-events: none;
 }
@@ -157,7 +158,7 @@ body {
 /* Logistics Paths */
 .logistics-path {
   position: absolute;
-  background: rgba(127, 186, 66, 0.1);
+  background: rgba(174, 213, 128, 0.1);
   border-radius: 10px;
   pointer-events: none;
 }
@@ -238,7 +239,7 @@ body {
 }
 
 .connection-line {
-  stroke: rgba(127, 186, 66, 0.2);
+  stroke: rgba(174, 213, 128, 0.2);
   stroke-width: 2;
   stroke-dasharray: 5, 5;
   animation: dash 20s linear infinite;
@@ -379,7 +380,7 @@ body {
 .nav-link:hover,
 .nav-link.active {
   color: var(--primary-green);
-  background-color: rgba(127, 186, 66, 0.05);
+  background-color: rgba(174, 213, 128, 0.05);
   transform: translateY(-1px);
 }
 
@@ -536,7 +537,7 @@ body {
 .form-textarea:focus {
   outline: none;
   border-color: var(--primary-green);
-  box-shadow: 0 0 0 3px rgba(127, 186, 66, 0.1);
+  box-shadow: 0 0 0 3px rgba(174, 213, 128, 0.1);
 }
 
 .form-textarea {
@@ -570,7 +571,7 @@ body {
 }
 
 .accordion-header:hover {
-  background: rgba(127, 186, 66, 0.05);
+  background: rgba(174, 213, 128, 0.05);
 }
 
 .accordion-title {

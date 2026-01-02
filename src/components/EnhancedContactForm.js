@@ -35,9 +35,9 @@ const EnhancedContactForm = () => {
     {
       icon: '📧',
       title: 'Email',
-      details: 'info@ahununulogistics.com',
+      details: 'info@ahununu.com',
       subtext: 'We reply within 24 hours',
-      color: '#7fba42'
+      color: '#aed580'
     },
     {
       icon: '📍',

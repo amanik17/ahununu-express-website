@@ -171,7 +171,7 @@ const RefinedHero = () => {
               color: '#334155'
             }}>
               Your <span style={{
-                background: 'linear-gradient(135deg, #127A6A 0%, #0e6356 100%)',
+                background: 'linear-gradient(135deg, #127A6A 0%, #aed580 100%)',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent'
               }}>Trusted Logistics</span>

@@ -4,8 +4,8 @@ const Spinner = ({ size = 32 }) => {
   const style = {
     width: size,
     height: size,
-    border: '3px solid rgba(127,186,66,0.25)',
-    borderTopColor: '#7fba42',
+    border: '3px solid rgba(174,213,128,0.25)',
+    borderTopColor: '#127A6A',
     borderRadius: '50%',
     animation: 'spin 0.8s linear infinite',
     margin: '0 auto'

@@ -32,9 +32,9 @@
 }
 
 .input-mobile:focus {
-  border-color: #7fba42;
+  border-color: #127A6A;
   outline: none;
-  box-shadow: 0 0 0 3px rgba(127, 186, 66, 0.1);
+  box-shadow: 0 0 0 3px rgba(174, 213, 128, 0.1);
 }
 
 .grid-mobile {

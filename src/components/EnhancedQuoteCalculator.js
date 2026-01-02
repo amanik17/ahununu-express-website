@@ -117,7 +117,7 @@ const EnhancedQuoteCalculator = () => {
           <h1 style={{
             fontSize: '3rem',
             fontWeight: 800,
-            background: 'linear-gradient(135deg, #7fba42 0%, #6ba036 100%)',
+            background: 'linear-gradient(135deg, #127A6A 0%, #aed580 100%)',
             WebkitBackgroundClip: 'text',
             WebkitTextFillColor: 'transparent',
             marginBottom: '0.5rem'
@@ -142,7 +142,7 @@ const EnhancedQuoteCalculator = () => {
                 <motion.div
                   animate={{
                     scale: step === s ? 1.2 : 1,
-                    backgroundColor: step >= s ? '#7fba42' : '#e2e8f0'
+                    backgroundColor: step >= s ? '#127A6A' : '#e2e8f0'
                   }}
                   style={{
                     width: step === s ? '48px' : '40px',
@@ -163,7 +163,7 @@ const EnhancedQuoteCalculator = () => {
                   <div style={{
                     width: '60px',
                     height: '3px',
-                    background: step > s ? '#7fba42' : '#e2e8f0',
+                    background: step > s ? '#127A6A' : '#e2e8f0',
                     borderRadius: '2px',
                     transition: 'all 0.3s ease'
                   }} />
@@ -253,7 +253,7 @@ const EnhancedQuoteCalculator = () => {
                   onClick={handleNext}
                   style={{
                     padding: '1rem 2.5rem',
-                    background: 'linear-gradient(135deg, #7fba42 0%, #6ba036 100%)',
+                    background: 'linear-gradient(135deg, #127A6A 0%, #aed580 100%)',
                     color: 'white',
                     border: 'none',
                     borderRadius: '12px',
@@ -302,11 +302,11 @@ const EnhancedQuoteCalculator = () => {
                     onClick={() => setFormData({...formData, item: item.id})}
                     style={{
                       padding: '1.5rem 1rem',
-                      border: formData.item === item.id ? '2px solid #7fba42' : '2px solid #e2e8f0',
+                      border: formData.item === item.id ? '2px solid #127A6A' : '2px solid #e2e8f0',
                       borderRadius: '16px',
                       textAlign: 'center',
                       cursor: 'pointer',
-                      background: formData.item === item.id ? 'rgba(127, 186, 66, 0.05)' : 'white'
+                      background: formData.item === item.id ? 'rgba(174, 213, 128, 0.05)' : 'white'
                     }}
                   >
                     <div style={{ fontSize: '2.5rem', marginBottom: '0.5rem' }}>{item.icon}</div>
@@ -321,11 +321,11 @@ const EnhancedQuoteCalculator = () => {
                   onClick={() => setFormData({...formData, item: 'other'})}
                   style={{
                     padding: '1.5rem 1rem',
-                    border: formData.item === 'other' ? '2px solid #7fba42' : '2px dashed #cbd5e1',
+                    border: formData.item === 'other' ? '2px solid #127A6A' : '2px dashed #cbd5e1',
                     borderRadius: '16px',
                     textAlign: 'center',
                     cursor: 'pointer',
-                    background: formData.item === 'other' ? 'rgba(127, 186, 66, 0.05)' : 'white'
+                    background: formData.item === 'other' ? 'rgba(174, 213, 128, 0.05)' : 'white'
                   }}
                 >
                   <div style={{ fontSize: '2.5rem', marginBottom: '0.5rem' }}>➕</div>
@@ -401,7 +401,7 @@ const EnhancedQuoteCalculator = () => {
                   onClick={handleNext}
                   style={{
                     padding: '1rem 2.5rem',
-                    background: 'linear-gradient(135deg, #7fba42 0%, #6ba036 100%)',
+                    background: 'linear-gradient(135deg, #127A6A 0%, #aed580 100%)',
                     color: 'white',
                     border: 'none',
                     borderRadius: '12px',
@@ -479,7 +479,7 @@ const EnhancedQuoteCalculator = () => {
                   onClick={handleNext}
                   style={{
                     padding: '1rem 2.5rem',
-                    background: 'linear-gradient(135deg, #7fba42 0%, #6ba036 100%)',
+                    background: 'linear-gradient(135deg, #127A6A 0%, #aed580 100%)',
                     color: 'white',
                     border: 'none',
                     borderRadius: '12px',
@@ -514,7 +514,7 @@ const EnhancedQuoteCalculator = () => {
               </div>
 
               <div style={{
-                background: 'linear-gradient(135deg, #7fba42 0%, #6ba036 100%)',
+                background: 'linear-gradient(135deg, #127A6A 0%, #aed580 100%)',
                 padding: '2.5rem',
                 borderRadius: '20px',
                 textAlign: 'center',
@@ -535,7 +535,7 @@ const EnhancedQuoteCalculator = () => {
                     flex: 1,
                     minWidth: '200px',
                     padding: '1rem 2rem',
-                    background: 'linear-gradient(135deg, #7fba42 0%, #6ba036 100%)',
+                    background: 'linear-gradient(135deg, #127A6A 0%, #aed580 100%)',
                     color: 'white',
                     border: 'none',
                     borderRadius: '12px',

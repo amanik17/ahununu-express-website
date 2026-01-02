@@ -8,7 +8,7 @@ const ModernAboutPage = () => {
     {
       year: 2014,
       title: 'Company Founded',
-      description: 'Ahununu Express was established in Addis Ababa with a vision to revolutionize logistics in Ethiopia.',
+      description: 'Ahununu Logistics was established in Addis Ababa with a vision to revolutionize logistics in Ethiopia.',
       icon: '🚀',
       color: '#127A6A'
     },
@@ -43,7 +43,7 @@ const ModernAboutPage = () => {
     {
       year: 2024,
       title: 'Regional Leader',
-      description: 'Became Ethiopia\'s #1 express service provider with 85+ cities coverage.',
+      description: 'Became Ethiopia\'s #1 logistics service provider with 85+ cities coverage.',
       icon: '⭐',
       color: '#8B5CF6'
     }
@@ -90,8 +90,8 @@ const ModernAboutPage = () => {
 
   const stats = [
     { number: '8+', label: 'Years Experience', icon: '📅', color: '#127A6A' },
-    { number: '85+', label: 'Cities Covered', icon: '🏙️', color: '#4A90E2' },
-    { number: '500+', label: 'Vehicles', icon: '🚛', color: '#F5A623' },
+    { number: '85+', label: 'Cities Covered', icon: '🏙️', color: '#aed580' },
+    { number: '500+', label: 'Vehicles', icon: '🚛', color: '#aed580' },
     { number: '150+', label: 'Team Members', icon: '👥', color: '#E94F64' },
     { number: '1.5K+', label: 'Daily Deliveries', icon: '📦', color: '#10B981' },
     { number: '98%', label: 'Customer Satisfaction', icon: '⭐', color: '#8B5CF6' }
@@ -162,7 +162,7 @@ const ModernAboutPage = () => {
               marginBottom: '1rem',
               textShadow: '0 4px 12px rgba(0,0,0,0.1)'
             }}>
-              About Ahununu Express
+              About Ahununu Logistics
             </h1>
             <p style={{
               fontSize: '1.5rem',
