@@ -215,7 +215,7 @@ const ModernFooter = () => {
                       transition: 'color 0.2s ease',
                       display: 'inline-block'
                     }}
-                    onMouseOver={(e) => e.target.style.color = '#127A6A'}
+                    onMouseOver={(e) => e.target.style.color = '#aed580'}
                     onMouseOut={(e) => e.target.style.color = '#94a3b8'}
                   >
                     {link.label}
@@ -246,7 +246,7 @@ const ModernFooter = () => {
                       transition: 'color 0.2s ease',
                       display: 'inline-block'
                     }}
-                    onMouseOver={(e) => e.target.style.color = '#127A6A'}
+                    onMouseOver={(e) => e.target.style.color = '#aed580'}
                     onMouseOut={(e) => e.target.style.color = '#94a3b8'}
                   >
                     {link.label}
@@ -277,7 +277,7 @@ const ModernFooter = () => {
                       transition: 'color 0.2s ease',
                       display: 'inline-block'
                     }}
-                    onMouseOver={(e) => e.target.style.color = '#127A6A'}
+                    onMouseOver={(e) => e.target.style.color = '#aed580'}
                     onMouseOut={(e) => e.target.style.color = '#94a3b8'}
                   >
                     {link.label}
@@ -301,13 +301,13 @@ const ModernFooter = () => {
               📞 Call Us
             </h5>
             <p style={{ color: '#94a3b8', marginBottom: '0.25rem' }}>
-              <a href="tel:+251970025656" style={{ color: '#7fba42', textDecoration: 'none', display: 'block' }}>
+              <a href="tel:+251970025656" style={{ color: '#aed580', textDecoration: 'none', display: 'block' }}>
                 +251 970 025656
               </a>
-              <a href="tel:+251953563356" style={{ color: '#7fba42', textDecoration: 'none', display: 'block' }}>
+              <a href="tel:+251953563356" style={{ color: '#aed580', textDecoration: 'none', display: 'block' }}>
                 +251 953 563356
               </a>
-              <a href="tel:8414" style={{ color: '#7fba42', textDecoration: 'none', display: 'block', fontWeight: 'bold' }}>
+              <a href="tel:8414" style={{ color: '#aed580', textDecoration: 'none', display: 'block', fontWeight: 'bold' }}>
                 Short Code: 8414
               </a>
             </p>
@@ -319,8 +319,8 @@ const ModernFooter = () => {
               📧 Email Us
             </h5>
             <p style={{ color: '#94a3b8', marginBottom: '0.25rem' }}>
-              <a href="mailto:info@ahununulogistics.com" style={{ color: '#7fba42', textDecoration: 'none' }}>
-                info@ahununulogistics.com
+              <a href="mailto:info@ahununu.com" style={{ color: '#aed580', textDecoration: 'none' }}>
+                info@ahununu.com
               </a>
             </p>
             <p style={{ color: '#94a3b8', fontSize: '0.9rem' }}>We reply within 24 hours</p>
@@ -331,7 +331,7 @@ const ModernFooter = () => {
               📍 Visit Us
             </h5>
             <p style={{ color: '#94a3b8', marginBottom: '0.25rem' }}>
-              <a href="https://maps.app.goo.gl/cFxkaWWpgfkZPTFv8" target="_blank" rel="noopener noreferrer" style={{ color: '#7fba42', textDecoration: 'none' }}>
+              <a href="https://maps.app.goo.gl/cFxkaWWpgfkZPTFv8" target="_blank" rel="noopener noreferrer" style={{ color: '#aed580', textDecoration: 'none' }}>
                 22 Golagol, Addis Ababa Ethiopia
               </a>
             </p>
@@ -368,7 +368,7 @@ const ModernFooter = () => {
                   textDecoration: 'none',
                   transition: 'color 0.2s ease'
                 }}
-                onMouseOver={(e) => e.target.style.color = '#7fba42'}
+                onMouseOver={(e) => e.target.style.color = '#aed580'}
                 onMouseOut={(e) => e.target.style.color = '#94a3b8'}
               >
                 {link.label}
