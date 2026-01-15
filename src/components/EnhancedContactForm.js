@@ -29,7 +29,7 @@ const EnhancedContactForm = () => {
       icon: '📞',
       title: 'Phone',
       details: '+251 970 025656',
-      subtext: 'Mon-Sat, 8AM-6PM',
+      subtext: 'Mon-Sat, 8:30 AM-7PM',
       color: '#4A90E2'
     },
     {
@@ -49,8 +49,8 @@ const EnhancedContactForm = () => {
     {
       icon: '⏰',
       title: 'Business Hours',
-      details: 'Mon-Sat: 8AM-6PM',
-      subtext: 'Sun: 9AM-2PM',
+      details: 'Mon-Sat: 8:30 AM-7PM',
+      subtext: 'Sun: 8:30 AM-12:30PM',
       color: '#E94F64'
     }
   ];
@@ -62,7 +62,7 @@ const EnhancedContactForm = () => {
     },
     {
       q: 'Do you deliver on weekends?',
-      a: 'Yes, we offer Sunday delivery service from 9AM-2PM for express shipments.'
+      a: 'Yes, we offer Sunday delivery service from 8:30 AM-12:30PM for express shipments.'
     },
     {
       q: 'What are your shipping rates?',

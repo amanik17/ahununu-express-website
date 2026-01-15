@@ -311,7 +311,7 @@ const ModernFooter = () => {
                 Short Code: 8414
               </a>
             </p>
-            <p style={{ color: '#94a3b8', fontSize: '0.9rem' }}>Mon-Sat: 8AM-6PM, Sun: 9AM-2PM</p>
+            <p style={{ color: '#94a3b8', fontSize: '0.9rem' }}>Mon-Sat: 8:30 AM-7PM, Sun: 8:30 AM-12:30PM</p>
           </div>
 
           <div>
