@@ -1,9 +1,11 @@
  import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 
 const RefinedHero = () => {
   const [currentFeature, setCurrentFeature] = useState(0);
   const [activeTab, setActiveTab] = useState('speed');
+  const navigate = useNavigate();
   
   const features = [
     { icon: '⚡', text: 'Fast & Reliable Delivery', color: '#127A6A' },
@@ -229,7 +231,7 @@ const RefinedHero = () => {
               <motion.button
                 whileHover={{ scale: 1.05, boxShadow: '0 10px 25px rgba(18, 122, 106, 0.3)' }}
                 whileTap={{ scale: 0.95 }}
-                onClick={() => scrollToSection('quote')}
+                onClick={() => navigate('/quote')}
                 style={{
                   padding: '1rem 2rem',
                   background: 'linear-gradient(135deg, #127A6A 0%, #0e6356 100%)',
@@ -252,7 +254,7 @@ const RefinedHero = () => {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                onClick={() => scrollToSection('tracking')}
+                onClick={() => navigate('/tracking')}
                 style={{
                   padding: '1rem 2rem',
                   background: 'white',
