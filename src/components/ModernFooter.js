@@ -190,7 +190,7 @@ const ModernFooter = () => {
               lineHeight: 1.6,
               marginBottom: '1.5rem'
             }}>
-              Ethiopia's trusted logistics partner, delivering excellence across 85+ cities with speed, security, and reliability.
+              Ethiopia's trusted logistics partner, delivering excellence across 27+ branches with speed, security, and reliability.
             </p>
           </div>
 
@@ -388,7 +388,7 @@ const ModernFooter = () => {
           opacity: 0.8
         }}>
           <p>
-            Made with 💚 in Ethiopia | Proudly serving 85+ cities nationwide
+            Made with 💚 in Ethiopia | Proudly serving 27+ branches nationwide
           </p>
         </div>
       </div>

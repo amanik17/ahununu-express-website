@@ -43,7 +43,7 @@ const ModernAboutPage = () => {
     {
       year: 2024,
       title: 'Regional Leader',
-      description: 'Became Ethiopia\'s #1 logistics service provider with 85+ cities coverage.',
+      description: 'Became Ethiopia\'s #1 logistics service provider with 27+ branches nationwide.',
       icon: '⭐',
       color: '#8B5CF6'
     }
@@ -90,7 +90,7 @@ const ModernAboutPage = () => {
 
   const stats = [
     { number: '8+', label: 'Years Experience', icon: '📅', color: '#127A6A' },
-    { number: '85+', label: 'Cities Covered', icon: '🏙️', color: '#aed580' },
+    { number: '27+', label: 'Branches', icon: '🏙️', color: '#aed580' },
     { number: '500+', label: 'Vehicles', icon: '🚛', color: '#aed580' },
     { number: '150+', label: 'Team Members', icon: '👥', color: '#E94F64' },
     { number: '1.5K+', label: 'Daily Deliveries', icon: '📦', color: '#10B981' },

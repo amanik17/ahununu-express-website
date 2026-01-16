@@ -14,10 +14,26 @@ const RefinedHero = () => {
     { icon: '🏆', text: '24/7 Customer Support', color: '#E94F64' }
   ];
 
+  const [isBranchesOpen, setIsBranchesOpen] = useState(false);
+
+  const branches = [
+    'Addis Ababa(HQ)', 'Adama', 'Arbaminch', 'Assossa', 'Bahirdar',
+    'Debre markos', 'Debrebrhan', 'Dessie', 'Dilla', 'Diredewa',
+    'Gambella', 'Gonder', 'Harrar', 'Hawassa', 'Hossana', 'Jijiga',
+    'Jimma', 'Kombolcha', 'Logia', 'Mekelle', 'Nekemte', 'Shashemene',
+    'Shire', 'Sodo', 'Welkite', 'Kera', 'Merkato', 'Axum'
+  ];
+
   const stats = [
     { number: '15,000+', label: 'Deliveries Monthly', icon: '📦', color: '#127A6A' },
     { number: '98%', label: 'On-Time Delivery', icon: '⏱️', color: '#4A90E2' },
-    { number: '85+', label: 'Cities Covered', icon: '🌍', color: '#F5A623' },
+    { 
+      number: '27+', 
+      label: 'Branches', 
+      icon: '🌍', 
+      color: '#F5A623',
+      isDropdown: true
+    },
     { number: '24/7', label: 'Customer Support', icon: '💬', color: '#E94F64' }
   ];
 
@@ -453,6 +469,7 @@ const RefinedHero = () => {
             <motion.div
               key={index}
               whileHover={{ y: -8, scale: 1.02 }}
+              onClick={() => stat.isDropdown && setIsBranchesOpen(!isBranchesOpen)}
               style={{
                 background: 'white',
                 padding: '2rem',
@@ -461,7 +478,8 @@ const RefinedHero = () => {
                 boxShadow: '0 4px 12px rgba(0,0,0,0.08)',
                 border: '1px solid #e2e8f0',
                 cursor: 'pointer',
-                transition: 'all 0.3s ease'
+                transition: 'all 0.3s ease',
+                position: 'relative'
               }}
             >
               <motion.span
@@ -492,10 +510,81 @@ const RefinedHero = () => {
               <div style={{
                 color: '#64748b',
                 fontWeight: 500,
-                fontSize: '0.95rem'
+                fontSize: '0.95rem',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                gap: '0.5rem'
               }}>
                 {stat.label}
+                {stat.isDropdown && (
+                  <motion.span
+                    animate={{ rotate: isBranchesOpen ? 180 : 0 }}
+                    style={{ fontSize: '0.8rem' }}
+                  >
+                    ▼
+                  </motion.span>
+                )}
               </div>
+
+              {stat.isDropdown && (
+                <AnimatePresence>
+                  {isBranchesOpen && (
+                    <motion.div
+                      initial={{ opacity: 0, y: 10, scale: 0.95 }}
+                      animate={{ opacity: 1, y: 0, scale: 1 }}
+                      exit={{ opacity: 0, y: 10, scale: 0.95 }}
+                      style={{
+                        position: 'absolute',
+                        top: '100%',
+                        left: '50%',
+                        transform: 'translateX(-50%)',
+                        width: '280px',
+                        background: 'white',
+                        borderRadius: '16px',
+                        boxShadow: '0 20px 40px rgba(0,0,0,0.15)',
+                        border: '1px solid #e2e8f0',
+                        padding: '1.5rem',
+                        marginTop: '1rem',
+                        zIndex: 100,
+                        textAlign: 'left'
+                      }}
+                    >
+                      <h4 style={{ 
+                        fontSize: '1rem', 
+                        fontWeight: 700, 
+                        color: '#334155', 
+                        marginBottom: '1rem',
+                        borderBottom: '1px solid #f1f5f9',
+                        paddingBottom: '0.5rem'
+                      }}>
+                        Our Branches
+                      </h4>
+                      <div style={{ 
+                        display: 'grid', 
+                        gridTemplateColumns: '1fr 1fr', 
+                        gap: '0.5rem',
+                        maxHeight: '300px',
+                        overflowY: 'auto',
+                        paddingRight: '0.5rem'
+                      }}>
+                        {branches.map((branch, i) => (
+                          <div key={i} style={{ 
+                            fontSize: '0.85rem', 
+                            color: '#64748b',
+                            display: 'flex',
+                            alignItems: 'center',
+                            gap: '0.5rem'
+                          }}>
+                            <span style={{ color: '#127A6A' }}>•</span>
+                            {branch}
+                          </div>
+                        ))}
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              )}
             </motion.div>
           ))}
         </motion.div>
