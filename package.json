@@ -6,7 +6,6 @@
   "scripts": {
     "start": "webpack serve --mode development --config webpack.config.js",
     "build": "webpack --mode production --config webpack.config.js",
-    "install": "npm install --legacy-peer-deps",
     "vercel-build": "npm run build"
   },
   "dependencies": {
