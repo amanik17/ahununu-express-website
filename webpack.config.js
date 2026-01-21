@@ -28,7 +28,7 @@ module.exports = {
           options: {
             presets: [
               ['@babel/preset-env', { targets: { node: 'current' } }],
-              '@babel/preset-react'
+              '@babel/preset-react',
             ],
             cacheDirectory: true,
           },
@@ -39,9 +39,9 @@ module.exports = {
         use: ['style-loader', 'css-loader'],
       },
       {
-        test: /\.(png|svg|jpg|jpeg|gif|ico|otf)$/i,
+        test: /\.(png|svg|jpg|jpeg|gif|ico)$/i,
         type: 'asset/resource',
-        generator: { filename: 'assets/[name][hash][ext]' }
+        generator: { filename: 'assets/[name][hash][ext]' },
       },
     ],
   },
@@ -67,57 +67,51 @@ module.exports = {
   },
   plugins: [
     new webpack.DefinePlugin({
-      'process.env': JSON.stringify({
-        NODE_ENV: process.env.NODE_ENV,
-        REACT_APP_PUBLIC_SITE_URL: process.env.REACT_APP_PUBLIC_SITE_URL,
-        REACT_APP_API_BASE_URL: process.env.REACT_APP_API_BASE_URL,
-        REACT_APP_ANALYTICS_DOMAIN: process.env.REACT_APP_ANALYTICS_DOMAIN,
-        REACT_APP_SENTRY_DSN: process.env.REACT_APP_SENTRY_DSN,
-      })
+      'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'production'),
+      'process.env.REACT_APP_PUBLIC_SITE_URL': JSON.stringify(
+        process.env.REACT_APP_PUBLIC_SITE_URL || ''
+      ),
+      'process.env.REACT_APP_API_BASE_URL': JSON.stringify(
+        process.env.REACT_APP_API_BASE_URL || '/api'
+      ),
+      'process.env.REACT_APP_ANALYTICS_DOMAIN': JSON.stringify(
+        process.env.REACT_APP_ANALYTICS_DOMAIN || ''
+      ),
+      'process.env.REACT_APP_SENTRY_DSN': JSON.stringify(process.env.REACT_APP_SENTRY_DSN || ''),
     }),
     new HtmlWebpackPlugin({
       template: './public/index.html',
       inject: true,
-      minify: isProd ? {
-        removeComments: true,
-        collapseWhitespace: true,
-        removeRedundantAttributes: true,
-        useShortDoctype: true,
-        removeEmptyAttributes: true,
-        removeStyleLinkTypeAttributes: true,
-        keepClosingSlash: true,
-        minifyJS: true,
-        minifyCSS: true,
-        minifyURLs: true,
-      } : false,
+      minify: isProd
+        ? {
+            removeComments: true,
+            collapseWhitespace: true,
+            removeRedundantAttributes: true,
+            useShortDoctype: true,
+            removeEmptyAttributes: true,
+            removeStyleLinkTypeAttributes: true,
+            keepClosingSlash: true,
+            minifyJS: true,
+            minifyCSS: true,
+            minifyURLs: true,
+          }
+        : false,
     }),
     ...(isAnalyze ? [new BundleAnalyzerPlugin()] : []),
-    ...(isProd ? [
-      new InjectManifest({ 
-        swSrc: './src/sw.js', 
-        swDest: 'sw.js',
-        exclude: [/\.map$/, /^manifest.*\.js$/]
-      })
-    ] : []),
   ],
   resolve: {
     extensions: ['.js', '.jsx'],
     alias: {
       'three-mesh-bvh': false,
     },
+    fallback: {
+      fs: false,
+      path: false,
+    },
   },
   performance: {
     hints: isProd ? 'warning' : false,
     maxEntrypointSize: 512000,
     maxAssetSize: 512000,
-  },
-  devServer: {
-    host: '0.0.0.0',
-    port: 5000,
-    allowedHosts: 'all',
-    historyApiFallback: true,
-    client: {
-      overlay: true,
-    },
   },
 };
