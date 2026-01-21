@@ -10,7 +10,8 @@ const EnhancedQuoteCalculator = () => {
     customItem: '',
     customWeight: '0.5',
     customerType: 'regular',
-    service: 'standard'
+    service: 'standard',
+    shippingOption: 'air' // Added shippingOption
   });
   const [quote, setQuote] = useState(null);
   const [errors, setErrors] = useState({});
@@ -44,6 +45,9 @@ const EnhancedQuoteCalculator = () => {
       if (formData.selectedItems.length === 0 && !formData.customItem.trim()) {
         newErrors.items = 'Please select at least one item or specify a custom one';
       }
+      if (!formData.shippingOption) {
+        newErrors.shippingOption = 'Please select a shipping option';
+      }
     }
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
@@ -51,6 +55,11 @@ const EnhancedQuoteCalculator = () => {
 
   const handleNext = () => {
     if (validateStep(step)) {
+      if (step === 2 && formData.shippingOption === 'road') {
+        // Redirect or show contact message instead of proceeding to step 3/4
+        window.location.href = 'tel:8414';
+        return;
+      }
       if (step < 3) {
         setStep(step + 1);
       } else {
@@ -109,7 +118,8 @@ const EnhancedQuoteCalculator = () => {
       customItem: '',
       customWeight: '0.5',
       customerType: 'regular',
-      service: 'standard'
+      service: 'standard',
+      shippingOption: 'air'
     });
     setQuote(null);
     setErrors({});
@@ -397,6 +407,51 @@ const EnhancedQuoteCalculator = () => {
                 <p style={{ fontSize: '0.8rem', color: '#64748b', marginTop: '0.5rem' }}>
                   Custom items are priced based on our standard weight rate.
                 </p>
+              </div>
+
+              <div style={{ marginBottom: '2rem' }}>
+                <label style={{ display: 'block', fontSize: '0.95rem', fontWeight: 600, color: '#334155', marginBottom: '0.5rem' }}>
+                  🚢 Shipping Option
+                </label>
+                <select
+                  value={formData.shippingOption}
+                  onChange={(e) => setFormData({...formData, shippingOption: e.target.value})}
+                  style={{
+                    width: '100%',
+                    padding: '1rem',
+                    fontSize: '1rem',
+                    border: errors.shippingOption ? '2px solid #ef4444' : '2px solid #e2e8f0',
+                    borderRadius: '12px',
+                    outline: 'none',
+                    background: 'white',
+                    cursor: 'pointer'
+                  }}
+                >
+                  <option value="air">✈️ Air Mail (Get Instant Quote)</option>
+                  <option value="road">🚛 Road Cargo (Call for Pricing)</option>
+                </select>
+                {formData.shippingOption === 'road' && (
+                  <motion.div 
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    style={{ 
+                      marginTop: '1rem', 
+                      padding: '1rem', 
+                      background: 'rgba(18, 122, 106, 0.1)', 
+                      borderRadius: '12px',
+                      border: '1px solid #127A6A',
+                      color: '#127A6A',
+                      fontWeight: 600,
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '0.5rem'
+                    }}
+                  >
+                    <span>📞</span>
+                    For Road Cargo, please contact us at: <a href="tel:8414" style={{ color: '#127A6A', textDecoration: 'underline' }}>8414</a>
+                  </motion.div>
+                )}
+                {errors.shippingOption && <p style={{ color: '#ef4444', fontSize: '0.9rem', marginTop: '0.5rem' }}>{errors.shippingOption}</p>}
               </div>
 
               {errors.items && <p style={{ color: '#ef4444', fontSize: '0.9rem', marginBottom: '1rem' }}>{errors.items}</p>}
