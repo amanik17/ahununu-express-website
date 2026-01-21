@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 const ModernFooter = () => {
   const [email, setEmail] = useState('');
@@ -16,28 +17,28 @@ const ModernFooter = () => {
 
   const footerLinks = {
     services: [
-      { label: 'Road Freight', href: '#' },
-      { label: 'Air Freight', href: '#' },
-      { label: 'Warehousing', href: '#' },
-      { label: 'Last Mile Delivery', href: '#' },
-      { label: 'Medical Express', href: '#' },
-      { label: 'B2B Solutions', href: '#' }
+      { label: 'Road Freight', href: '/services' },
+      { label: 'Air Freight', href: '/services' },
+      { label: 'Warehousing', href: '/services' },
+      { label: 'Last Mile Delivery', href: '/services' },
+      { label: 'Medical Express', href: '/services' },
+      { label: 'B2B Solutions', href: '/services' }
     ],
     company: [
-      { label: 'About Us', href: '#' },
-      { label: 'Careers', href: '#' },
-      { label: 'News & Press', href: '#' },
+      { label: 'About Us', href: '/about' },
+      { label: 'Careers', href: '/careers' },
+      { label: 'News & Press', href: '/news' },
       { label: 'Sustainability', href: '#' },
-      { label: 'Partners', href: '#' },
-      { label: 'Contact', href: '#' }
+      { label: 'Partners', href: '/partners' },
+      { label: 'Contact', href: '/contact' }
     ],
     support: [
-      { label: 'Track Package', href: '#' },
-      { label: 'Get Quote', href: '#' },
-      { label: 'FAQs', href: '#' },
+      { label: 'Track Package', href: '/tracking' },
+      { label: 'Get Quote', href: '/quote' },
+      { label: 'FAQs', href: '/contact' },
       { label: 'Shipping Guide', href: '#' },
       { label: 'Claims', href: '#' },
-      { label: 'Feedback', href: '#' }
+      { label: 'Feedback', href: '/contact' }
     ],
     legal: [
       { label: 'Terms of Service', href: '#' },
@@ -207,8 +208,8 @@ const ModernFooter = () => {
             <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
               {footerLinks.services.map((link, index) => (
                 <li key={index} style={{ marginBottom: '0.75rem' }}>
-                  <a
-                    href={link.href}
+                  <Link
+                    to={link.href}
                     style={{
                       color: '#94a3b8',
                       textDecoration: 'none',
@@ -219,7 +220,7 @@ const ModernFooter = () => {
                     onMouseOut={(e) => e.target.style.color = '#94a3b8'}
                   >
                     {link.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -238,8 +239,8 @@ const ModernFooter = () => {
             <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
               {footerLinks.company.map((link, index) => (
                 <li key={index} style={{ marginBottom: '0.75rem' }}>
-                  <a
-                    href={link.href}
+                  <Link
+                    to={link.href}
                     style={{
                       color: '#94a3b8',
                       textDecoration: 'none',
@@ -250,7 +251,7 @@ const ModernFooter = () => {
                     onMouseOut={(e) => e.target.style.color = '#94a3b8'}
                   >
                     {link.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -269,8 +270,8 @@ const ModernFooter = () => {
             <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
               {footerLinks.support.map((link, index) => (
                 <li key={index} style={{ marginBottom: '0.75rem' }}>
-                  <a
-                    href={link.href}
+                  <Link
+                    to={link.href}
                     style={{
                       color: '#94a3b8',
                       textDecoration: 'none',
@@ -281,7 +282,7 @@ const ModernFooter = () => {
                     onMouseOut={(e) => e.target.style.color = '#94a3b8'}
                   >
                     {link.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -360,9 +361,9 @@ const ModernFooter = () => {
             fontSize: '0.9rem'
           }}>
             {footerLinks.legal.map((link, index) => (
-              <a
+              <Link
                 key={index}
-                href={link.href}
+                to={link.href}
                 style={{
                   color: '#94a3b8',
                   textDecoration: 'none',
@@ -372,7 +373,7 @@ const ModernFooter = () => {
                 onMouseOut={(e) => e.target.style.color = '#94a3b8'}
               >
                 {link.label}
-              </a>
+              </Link>
             ))}
           </div>
         </div>
