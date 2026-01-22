@@ -29,28 +29,28 @@ const EnhancedContactForm = () => {
       icon: '📞',
       title: 'Phone',
       details: '+251 970 025656',
-      subtext: 'Mon-Sat, 8AM-6PM',
+      subtext: 'Mon-Sat, 8:30 AM-7PM',
       color: '#4A90E2'
     },
     {
       icon: '📧',
       title: 'Email',
-      details: 'info@ahununuexpress.com',
+      details: 'info@ahununu.com',
       subtext: 'We reply within 24 hours',
-      color: '#7fba42'
+      color: '#aed580'
     },
     {
       icon: '📍',
       title: 'Visit Us',
-      details: '22 Golagol, Addis Ababa',
+      details: 'Ahununu Logistics HQ',
       subtext: 'Ethiopia',
       color: '#F5A623'
     },
     {
       icon: '⏰',
       title: 'Business Hours',
-      details: 'Mon-Sat: 8AM-6PM',
-      subtext: 'Sun: 9AM-2PM',
+      details: 'Mon-Sat: 8:30 AM-7PM',
+      subtext: 'Sun: 8:30 AM-12:30PM',
       color: '#E94F64'
     }
   ];
@@ -62,7 +62,7 @@ const EnhancedContactForm = () => {
     },
     {
       q: 'Do you deliver on weekends?',
-      a: 'Yes, we offer Sunday delivery service from 9AM-2PM for express shipments.'
+      a: 'Yes, we offer Sunday delivery service from 8:30 AM-12:30PM for express shipments.'
     },
     {
       q: 'What are your shipping rates?',
@@ -164,7 +164,7 @@ const EnhancedContactForm = () => {
           <h1 style={{
             fontSize: '3rem',
             fontWeight: 800,
-            background: 'linear-gradient(135deg, #7fba42 0%, #6ba036 100%)',
+            background: 'linear-gradient(135deg, #127A6A 0%, #0e6356 100%)',
             WebkitBackgroundClip: 'text',
             WebkitTextFillColor: 'transparent',
             marginBottom: '0.5rem'
@@ -364,7 +364,7 @@ const EnhancedContactForm = () => {
                         outline: 'none',
                         transition: 'all 0.3s ease'
                       }}
-                      onFocus={(e) => !errors.name && (e.target.style.borderColor = '#7fba42')}
+                      onFocus={(e) => !errors.name && (e.target.style.borderColor = '#127A6A')}
                       onBlur={(e) => !errors.name && (e.target.style.borderColor = '#e2e8f0')}
                     />
                     {errors.name && (
@@ -399,7 +399,7 @@ const EnhancedContactForm = () => {
                         outline: 'none',
                         transition: 'all 0.3s ease'
                       }}
-                      onFocus={(e) => !errors.email && (e.target.style.borderColor = '#7fba42')}
+                      onFocus={(e) => !errors.email && (e.target.style.borderColor = '#127A6A')}
                       onBlur={(e) => !errors.email && (e.target.style.borderColor = '#e2e8f0')}
                     />
                     {errors.email && (
@@ -434,7 +434,7 @@ const EnhancedContactForm = () => {
                         outline: 'none',
                         transition: 'all 0.3s ease'
                       }}
-                      onFocus={(e) => !errors.phone && (e.target.style.borderColor = '#7fba42')}
+                      onFocus={(e) => !errors.phone && (e.target.style.borderColor = '#127A6A')}
                       onBlur={(e) => !errors.phone && (e.target.style.borderColor = '#e2e8f0')}
                     />
                     {errors.phone && (
@@ -468,10 +468,10 @@ const EnhancedContactForm = () => {
                           onClick={() => handleInputChange('subject', subject.value)}
                           style={{
                             padding: '0.75rem',
-                            border: formData.subject === subject.value ? '2px solid #7fba42' : '2px solid #e2e8f0',
+                            border: formData.subject === subject.value ? '2px solid #127A6A' : '2px solid #e2e8f0',
                             borderRadius: '12px',
                             cursor: 'pointer',
-                            background: formData.subject === subject.value ? 'rgba(127, 186, 66, 0.05)' : 'white',
+                            background: formData.subject === subject.value ? 'rgba(18, 122, 106, 0.05)' : 'white',
                             display: 'flex',
                             alignItems: 'center',
                             gap: '0.5rem',
@@ -518,7 +518,7 @@ const EnhancedContactForm = () => {
                         transition: 'all 0.3s ease',
                         fontFamily: 'inherit'
                       }}
-                      onFocus={(e) => !errors.message && (e.target.style.borderColor = '#7fba42')}
+                      onFocus={(e) => !errors.message && (e.target.style.borderColor = '#127A6A')}
                       onBlur={(e) => !errors.message && (e.target.style.borderColor = '#e2e8f0')}
                     />
                     {errors.message && (
@@ -540,7 +540,7 @@ const EnhancedContactForm = () => {
                     style={{
                       width: '100%',
                       padding: '1.25rem',
-                      background: isSubmitting ? '#94a3b8' : 'linear-gradient(135deg, #7fba42 0%, #6ba036 100%)',
+                      background: isSubmitting ? '#94a3b8' : 'linear-gradient(135deg, #127A6A 0%, #0e6356 100%)',
                       color: 'white',
                       border: 'none',
                       borderRadius: '12px',
@@ -551,7 +551,7 @@ const EnhancedContactForm = () => {
                       alignItems: 'center',
                       justifyContent: 'center',
                       gap: '0.5rem',
-                      boxShadow: '0 4px 12px rgba(127, 186, 66, 0.3)'
+                      boxShadow: '0 4px 12px rgba(18, 122, 106, 0.3)'
                     }}
                   >
                     {isSubmitting ? (
@@ -578,13 +578,15 @@ const EnhancedContactForm = () => {
 
               {/* Additional Info Card */}
               <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
-                {/* Map Placeholder */}
+                {/* Map Section */}
                 <div style={{
                   background: 'white',
                   borderRadius: '24px',
                   padding: '2rem',
                   boxShadow: '0 20px 60px rgba(0,0,0,0.08)',
-                  minHeight: '300px'
+                  minHeight: '400px',
+                  display: 'flex',
+                  flexDirection: 'column'
                 }}>
                   <h3 style={{
                     fontSize: '1.5rem',
@@ -595,22 +597,50 @@ const EnhancedContactForm = () => {
                     Visit Our Office
                   </h3>
                   <div style={{
-                    background: 'linear-gradient(135deg, #7fba42 0%, #6ba036 100%)',
+                    flex: 1,
+                    minHeight: '250px',
                     borderRadius: '16px',
-                    height: '200px',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    fontSize: '4rem',
-                    marginBottom: '1rem'
+                    overflow: 'hidden',
+                    marginBottom: '1rem',
+                    border: '1px solid #e2e8f0'
                   }}>
-                    🗺️
+                    <iframe
+                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3940.551848574345!2d38.7845!3d9.0145!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x164b850000000001%3A0x0!2zMjIgR29sYWdvbCwgQWRkaXMgQWJhYmEsIEV0aGlvcGlh!5e0!3m2!1sen!2set!4v1234567890"
+                      width="100%"
+                      height="100%"
+                      style={{ border: 0 }}
+                      allowFullScreen=""
+                      loading="lazy"
+                      referrerPolicy="no-referrer-when-downgrade"
+                      title="Ahununu Logistics HQ Location"
+                    ></iframe>
                   </div>
-                  <p style={{ color: '#64748b', lineHeight: 1.6 }}>
-                    <strong>Ahununu Express HQ</strong><br />
-                    22 Golagol, Addis Ababa<br />
-                    Ethiopia
-                  </p>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
+                    <p style={{ color: '#64748b', lineHeight: 1.6, margin: 0 }}>
+                      <strong>Ahununu Logistics HQ</strong><br />
+                      22 Golagol, Addis Ababa<br />
+                      Ethiopia
+                    </p>
+                    <motion.a
+                      href="https://maps.app.goo.gl/cFxkaWWpgfkZPTFv8"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                      style={{
+                        padding: '0.5rem 1rem',
+                        background: '#7fba42',
+                        color: 'white',
+                        textDecoration: 'none',
+                        borderRadius: '8px',
+                        fontSize: '0.9rem',
+                        fontWeight: 600,
+                        boxShadow: '0 4px 12px rgba(127, 186, 66, 0.2)'
+                      }}
+                    >
+                      Open in Maps
+                    </motion.a>
+                  </div>
                 </div>
 
                 {/* Why Choose Us */}
@@ -748,7 +778,7 @@ const EnhancedContactForm = () => {
                   onClick={() => setActiveTab('form')}
                   style={{
                     padding: '0.75rem 2rem',
-                    background: 'linear-gradient(135deg, #7fba42 0%, #6ba036 100%)',
+                    background: 'linear-gradient(135deg, #127A6A 0%, #0e6356 100%)',
                     color: 'white',
                     border: 'none',
                     borderRadius: '12px',

@@ -1,21 +1,29 @@
  import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 
 const RefinedHero = () => {
   const [currentFeature, setCurrentFeature] = useState(0);
   const [activeTab, setActiveTab] = useState('speed');
-  
+  const navigate = useNavigate();
+
   const features = [
-    { icon: '⚡', text: 'Fast & Reliable Delivery', color: '#7fba42' },
+    { icon: '⚡', text: 'Fast & Reliable Delivery', color: '#127A6A' },
     { icon: '📍', text: 'Real-time Tracking', color: '#4A90E2' },
     { icon: '💰', text: 'Affordable Pricing', color: '#F5A623' },
     { icon: '🏆', text: '24/7 Customer Support', color: '#E94F64' }
   ];
 
   const stats = [
-    { number: '15,000+', label: 'Deliveries Monthly', icon: '📦', color: '#7fba42' },
+    { number: '15,000+', label: 'Deliveries Monthly', icon: '📦', color: '#127A6A' },
     { number: '98%', label: 'On-Time Delivery', icon: '⏱️', color: '#4A90E2' },
-    { number: '85+', label: 'Cities Covered', icon: '🌍', color: '#F5A623' },
+    { 
+      number: '27+', 
+      label: 'Branches', 
+      icon: '🌍', 
+      color: '#F5A623',
+      link: '/branches'
+    },
     { number: '24/7', label: 'Customer Support', icon: '💬', color: '#E94F64' }
   ];
 
@@ -56,6 +64,26 @@ const RefinedHero = () => {
       element.scrollIntoView({ behavior: 'smooth' });
     }
   };
+
+  const partners = [
+    { name: 'Ethiopian Airlines', logo: '/assets/partner_ethiopian.png' },
+    { name: 'Moenco', logo: '/assets/partner_moenco.png' },
+    { name: 'BGI Ethiopia', logo: '/assets/partner_bgi.png' },
+    { name: 'Habesha', logo: '/assets/partner_habesha.png' },
+    { name: 'Safaricom', logo: '/assets/partner_safaricom.png' },
+    { name: 'Dashin Bank', logo: '/assets/partner_dashin.png' },
+    { name: 'GIZ', logo: '/assets/partner_giz.png' },
+    { name: 'MSF', logo: '/assets/partner_msf.png' },
+    // Duplicate for seamless loop
+    { name: 'Ethiopian Airlines', logo: '/assets/partner_ethiopian.png' },
+    { name: 'Moenco', logo: '/assets/partner_moenco.png' },
+    { name: 'BGI Ethiopia', logo: '/assets/partner_bgi.png' },
+    { name: 'Habesha', logo: '/assets/partner_habesha.png' },
+    { name: 'Safaricom', logo: '/assets/partner_safaricom.png' },
+    { name: 'Dashin Bank', logo: '/assets/partner_dashin.png' },
+    { name: 'GIZ', logo: '/assets/partner_giz.png' },
+    { name: 'MSF', logo: '/assets/partner_msf.png' }
+  ];
 
   return (
     <div style={{
@@ -128,18 +156,18 @@ const RefinedHero = () => {
                 display: 'inline-flex',
                 alignItems: 'center',
                 gap: '0.5rem',
-                background: 'rgba(127, 186, 66, 0.1)',
-                color: '#7fba42',
+                background: 'rgba(18, 122, 106, 0.1)',
+                color: '#127A6A',
                 padding: '0.5rem 1rem',
                 borderRadius: '50px',
                 fontSize: '0.9rem',
                 fontWeight: 600,
                 marginBottom: '1.5rem',
-                border: '1px solid rgba(127, 186, 66, 0.2)'
+                border: '1px solid rgba(18, 122, 106, 0.2)'
               }}
             >
               <span>✨</span>
-              Ethiopia's #1 Express Service
+              Ethiopia's #1 Logistics Service
             </motion.div>
 
             {/* Main Heading */}
@@ -151,10 +179,10 @@ const RefinedHero = () => {
               color: '#334155'
             }}>
               Your <span style={{
-                background: 'linear-gradient(135deg, #7fba42 0%, #6ba036 100%)',
+                background: 'linear-gradient(135deg, #127A6A 0%, #aed580 100%)',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent'
-              }}>Trusted Express</span>
+              }}>Trusted Logistics</span>
               <br />Service Provider
             </h1>
 
@@ -207,12 +235,12 @@ const RefinedHero = () => {
               marginBottom: '2rem'
             }}>
               <motion.button
-                whileHover={{ scale: 1.05, boxShadow: '0 10px 25px rgba(127, 186, 66, 0.3)' }}
+                whileHover={{ scale: 1.05, boxShadow: '0 10px 25px rgba(18, 122, 106, 0.3)' }}
                 whileTap={{ scale: 0.95 }}
-                onClick={() => scrollToSection('quote')}
+                onClick={() => navigate('/quote')}
                 style={{
                   padding: '1rem 2rem',
-                  background: 'linear-gradient(135deg, #7fba42 0%, #6ba036 100%)',
+                  background: 'linear-gradient(135deg, #127A6A 0%, #0e6356 100%)',
                   color: 'white',
                   border: 'none',
                   borderRadius: '12px',
@@ -222,7 +250,7 @@ const RefinedHero = () => {
                   display: 'flex',
                   alignItems: 'center',
                   gap: '0.5rem',
-                  boxShadow: '0 4px 12px rgba(127, 186, 66, 0.3)'
+                  boxShadow: '0 4px 12px rgba(18, 122, 106, 0.3)'
                 }}
               >
                 Get Instant Quote
@@ -232,12 +260,12 @@ const RefinedHero = () => {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                onClick={() => scrollToSection('tracking')}
+                onClick={() => navigate('/tracking')}
                 style={{
                   padding: '1rem 2rem',
                   background: 'white',
-                  color: '#7fba42',
-                  border: '2px solid #7fba42',
+                  color: '#127A6A',
+                  border: '2px solid #127A6A',
                   borderRadius: '12px',
                   fontSize: '1.05rem',
                   fontWeight: 600,
@@ -313,7 +341,7 @@ const RefinedHero = () => {
                     style={{
                       flex: 1,
                       padding: '0.75rem',
-                      background: activeTab === service.id ? 'linear-gradient(135deg, #7fba42 0%, #6ba036 100%)' : 'transparent',
+                      background: activeTab === service.id ? 'linear-gradient(135deg, #127A6A 0%, #0e6356 100%)' : 'transparent',
                       color: activeTab === service.id ? 'white' : '#64748b',
                       border: 'none',
                       borderRadius: '12px',
@@ -394,7 +422,7 @@ const RefinedHero = () => {
                               width: '8px',
                               height: '8px',
                               borderRadius: '50%',
-                              background: '#7fba42',
+                              background: '#127A6A',
                               flexShrink: 0
                             }} />
                             <span style={{
@@ -431,6 +459,7 @@ const RefinedHero = () => {
             <motion.div
               key={index}
               whileHover={{ y: -8, scale: 1.02 }}
+              onClick={() => stat.link && navigate(stat.link)}
               style={{
                 background: 'white',
                 padding: '2rem',
@@ -438,8 +467,9 @@ const RefinedHero = () => {
                 textAlign: 'center',
                 boxShadow: '0 4px 12px rgba(0,0,0,0.08)',
                 border: '1px solid #e2e8f0',
-                cursor: 'pointer',
-                transition: 'all 0.3s ease'
+                cursor: stat.link ? 'pointer' : 'default',
+                transition: 'all 0.3s ease',
+                position: 'relative'
               }}
             >
               <motion.span
@@ -470,13 +500,75 @@ const RefinedHero = () => {
               <div style={{
                 color: '#64748b',
                 fontWeight: 500,
-                fontSize: '0.95rem'
+                fontSize: '0.95rem',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                gap: '0.5rem'
               }}>
                 {stat.label}
+                {stat.link && (
+                  <span style={{ fontSize: '0.8rem' }}>→</span>
+                )}
               </div>
             </motion.div>
           ))}
         </motion.div>
+
+        {/* Partners Slider Section */}
+        <div style={{
+          width: '100%',
+          overflow: 'hidden',
+          padding: '2rem 0',
+          position: 'relative',
+          background: 'rgba(255, 255, 255, 0.5)',
+          borderRadius: '16px',
+          marginTop: '2rem'
+        }}>
+          <div style={{
+            textAlign: 'center',
+            marginBottom: '1rem',
+            fontSize: '0.9rem',
+            color: '#64748b',
+            fontWeight: 600,
+            textTransform: 'uppercase',
+            letterSpacing: '1px'
+          }}>
+            Trusted By Leading Companies
+          </div>
+          <div style={{
+            display: 'flex',
+            width: '200%',
+            animation: 'scroll 20s linear infinite',
+          }}>
+            <style>{`
+              @keyframes scroll {
+                0% { transform: translateX(0); }
+                100% { transform: translateX(-50%); }
+              }
+            `}</style>
+            <div style={{
+              display: 'flex',
+              justifyContent: 'space-around',
+              width: '100%',
+              alignItems: 'center'
+            }}>
+              {partners.map((partner, index) => (
+                <img
+                  key={index}
+                  src={partner.logo}
+                  alt={partner.name}
+                  style={{
+                    height: '40px',
+                    filter: 'grayscale(100%)',
+                    opacity: 0.6,
+                    margin: '0 2rem'
+                  }}
+                />
+              ))}
+            </div>
+          </div>
+        </div>
 
         {/* Scroll Indicator */}
         <motion.div
@@ -495,7 +587,7 @@ const RefinedHero = () => {
           <div style={{
             width: '2px',
             height: '40px',
-            background: 'linear-gradient(to bottom, #7fba42, transparent)',
+            background: 'linear-gradient(to bottom, #127A6A, transparent)',
             borderRadius: '2px'
           }} />
         </motion.div>

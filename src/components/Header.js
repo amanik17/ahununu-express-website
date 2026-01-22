@@ -29,8 +29,7 @@ const Header = () => {
       <div className="header-content">
         <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
           <Link to="/" className="logo">
-            <span>🚚</span>
-            Ahununu Express
+            <img src="/assets/logo_alt.png" alt="Ahununu Logistics Logo" style={{ height: '50px' }} />
           </Link>
         </motion.div>
 
@@ -45,18 +44,6 @@ const Header = () => {
             </NavLink>
           ))}
         </nav>
-
-        <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
-          <select
-            aria-label={t('actions.language')}
-            value={locale}
-            onChange={(e) => setLocale(e.target.value)}
-            className="select select-bordered select-sm max-w-xs"
-          >
-            <option value="en">English</option>
-            <option value="am">Amharic</option>
-          </select>
-        </div>
 
         <button
           className="mobile-menu-toggle"

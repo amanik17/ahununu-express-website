@@ -20,7 +20,7 @@ const EnhancedTracking = () => {
   }, []);
 
   const mockTrackingData = {
-    'AE123456789': {
+    'AWB00000000': {
       status: 'In Transit',
       estimatedDelivery: '2025-12-03',
       currentLocation: 'Addis Ababa Distribution Center',
@@ -66,7 +66,7 @@ const EnhancedTracking = () => {
         weight: '2.5 kg',
         dimensions: '30x20x15 cm',
         service: 'Express Delivery',
-        sender: 'Addis Ababa',
+        sender: 'Abebe Bikila',
         recipient: 'Bahir Dar'
       }
     }
@@ -129,7 +129,7 @@ const EnhancedTracking = () => {
           <h1 style={{
             fontSize: '3rem',
             fontWeight: 800,
-            background: 'linear-gradient(135deg, #7fba42 0%, #6ba036 100%)',
+            background: 'linear-gradient(135deg, #127A6A 0%, #0e6356 100%)',
             WebkitBackgroundClip: 'text',
             WebkitTextFillColor: 'transparent',
             marginBottom: '0.5rem'
@@ -169,7 +169,7 @@ const EnhancedTracking = () => {
                 type="text"
                 value={trackingNumber}
                 onChange={(e) => setTrackingNumber(e.target.value)}
-                placeholder="Enter tracking number (e.g., AE123456789)"
+                placeholder="Enter tracking number (e.g., AWB00000000)"
                 onKeyPress={(e) => e.key === 'Enter' && handleSubmit(e)}
                 style={{
                   flex: 1,
@@ -181,7 +181,7 @@ const EnhancedTracking = () => {
                   outline: 'none',
                   transition: 'all 0.3s ease'
                 }}
-                onFocus={(e) => e.target.style.borderColor = '#7fba42'}
+                onFocus={(e) => e.target.style.borderColor = '#127A6A'}
                 onBlur={(e) => e.target.style.borderColor = '#e2e8f0'}
               />
               <motion.button
@@ -191,7 +191,7 @@ const EnhancedTracking = () => {
                 whileTap={{ scale: 0.98 }}
                 style={{
                   padding: '1rem 2.5rem',
-                  background: isLoading ? '#94a3b8' : 'linear-gradient(135deg, #7fba42 0%, #6ba036 100%)',
+                  background: isLoading ? '#94a3b8' : 'linear-gradient(135deg, #127A6A 0%, #0e6356 100%)',
                   color: 'white',
                   border: 'none',
                   borderRadius: '12px',
@@ -305,7 +305,7 @@ const EnhancedTracking = () => {
                     <p style={{ fontSize: '0.9rem', color: '#64748b', marginBottom: '0.5rem' }}>
                       Status
                     </p>
-                    <p style={{ fontSize: '1.5rem', fontWeight: 700, color: '#7fba42' }}>
+                    <p style={{ fontSize: '1.5rem', fontWeight: 700, color: '#127A6A' }}>
                       {result.status}
                     </p>
                   </div>
@@ -340,7 +340,7 @@ const EnhancedTracking = () => {
                     <span style={{ fontSize: '0.9rem', color: '#64748b' }}>
                       Delivery Progress
                     </span>
-                    <span style={{ fontSize: '0.9rem', fontWeight: 600, color: '#7fba42' }}>
+                    <span style={{ fontSize: '0.9rem', fontWeight: 600, color: '#127A6A' }}>
                       {result.progress}%
                     </span>
                   </div>
@@ -357,7 +357,7 @@ const EnhancedTracking = () => {
                       transition={{ duration: 1, delay: 0.3, ease: 'easeOut' }}
                       style={{
                         height: '100%',
-                        background: 'linear-gradient(90deg, #7fba42 0%, #6ba036 100%)',
+                        background: 'linear-gradient(90deg, #127A6A 0%, #0e6356 100%)',
                         borderRadius: '6px',
                         position: 'relative'
                       }}
@@ -430,12 +430,12 @@ const EnhancedTracking = () => {
                         width: '40px',
                         height: '40px',
                         borderRadius: '50%',
-                        background: event.completed ? 'linear-gradient(135deg, #7fba42 0%, #6ba036 100%)' : '#f1f5f9',
+                        background: event.completed ? 'linear-gradient(135deg, #127A6A 0%, #0e6356 100%)' : '#f1f5f9',
                         display: 'flex',
                         alignItems: 'center',
                         justifyContent: 'center',
                         fontSize: '1.2rem',
-                        boxShadow: event.completed ? '0 4px 12px rgba(127, 186, 66, 0.3)' : 'none',
+                        boxShadow: event.completed ? '0 4px 12px rgba(18, 122, 106, 0.3)' : 'none',
                         zIndex: 1
                       }}>
                         {event.icon}
@@ -531,7 +531,7 @@ const EnhancedTracking = () => {
                     whileTap={{ scale: 0.98 }}
                     style={{
                       padding: '0.75rem 1.5rem',
-                      background: 'linear-gradient(135deg, #7fba42 0%, #6ba036 100%)',
+                      background: 'linear-gradient(135deg, #127A6A 0%, #0e6356 100%)',
                       color: 'white',
                       border: 'none',
                       borderRadius: '12px',
@@ -551,8 +551,8 @@ const EnhancedTracking = () => {
                     style={{
                       padding: '0.75rem 1.5rem',
                       background: 'white',
-                      color: '#7fba42',
-                      border: '2px solid #7fba42',
+                      color: '#127A6A',
+                      border: '2px solid #127A6A',
                       borderRadius: '12px',
                       fontSize: '0.95rem',
                       fontWeight: 600,

@@ -24,7 +24,7 @@ const Hero = () => {
   const stats = [
     { number: "15,000+", label: "Deliveries Monthly" },
     { number: "98%", label: "On-Time Delivery" },
-    { number: "85+", label: "Cities Covered" },
+    { number: "27+", label: "Branches" },
     { number: "24/7", label: "Customer Support" }
   ];
 

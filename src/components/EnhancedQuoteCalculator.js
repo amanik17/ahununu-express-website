@@ -6,12 +6,12 @@ const EnhancedQuoteCalculator = () => {
   const [formData, setFormData] = useState({
     from: '',
     to: '',
-    item: '',
+    selectedItems: [], // Changed from 'item' to 'selectedItems' array
     customItem: '',
     customWeight: '0.5',
     customerType: 'regular',
     service: 'standard',
-    quantity: 1
+    shippingOption: 'air' // Added shippingOption
   });
   const [quote, setQuote] = useState(null);
   const [errors, setErrors] = useState({});
@@ -42,9 +42,11 @@ const EnhancedQuoteCalculator = () => {
       if (!formData.to.trim()) newErrors.to = 'Please enter destination city';
     }
     if (currentStep === 2) {
-      if (!formData.item) newErrors.item = 'Please select an item';
-      if (formData.item === 'other' && !formData.customItem.trim()) {
-        newErrors.customItem = 'Please specify the item';
+      if (formData.selectedItems.length === 0 && !formData.customItem.trim()) {
+        newErrors.items = 'Please select at least one item or specify a custom one';
+      }
+      if (!formData.shippingOption) {
+        newErrors.shippingOption = 'Please select a shipping option';
       }
     }
     setErrors(newErrors);
@@ -53,6 +55,11 @@ const EnhancedQuoteCalculator = () => {
 
   const handleNext = () => {
     if (validateStep(step)) {
+      if (step === 2 && formData.shippingOption === 'road') {
+        // Redirect or show contact message instead of proceeding to step 3/4
+        window.location.href = 'tel:8414';
+        return;
+      }
       if (step < 3) {
         setStep(step + 1);
       } else {
@@ -61,26 +68,42 @@ const EnhancedQuoteCalculator = () => {
     }
   };
 
-  const calculateQuote = () => {
-    let selectedItem;
-    let total;
+  const toggleItem = (itemId) => {
+    setFormData(prev => {
+      const isSelected = prev.selectedItems.find(i => i.id === itemId);
+      if (isSelected) {
+        return { ...prev, selectedItems: prev.selectedItems.filter(i => i.id !== itemId) };
+      } else {
+        const item = items.find(i => i.id === itemId);
+        return { ...prev, selectedItems: [...prev.selectedItems, { ...item, quantity: 1 }] };
+      }
+    });
+  };
 
-    if (formData.item === 'other') {
-      selectedItem = {
-        id: 'custom',
-        name: formData.customItem,
-        price: weightPricing[formData.customerType][formData.customWeight] || 500
-      };
-      total = selectedItem.price;
-    } else {
-      selectedItem = items.find(item => item.id === formData.item);
-      total = selectedItem.price * formData.quantity;
+  const updateQuantity = (itemId, delta) => {
+    setFormData(prev => ({
+      ...prev,
+      selectedItems: prev.selectedItems.map(i => 
+        i.id === itemId ? { ...i, quantity: Math.max(1, i.quantity + delta) } : i
+      )
+    }));
+  };
+
+  const calculateQuote = () => {
+    let total = 0;
+    const itemList = [...formData.selectedItems];
+
+    total = itemList.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+
+    if (formData.customItem.trim()) {
+      const customPrice = weightPricing[formData.customerType][formData.customWeight] || 500;
+      total += customPrice;
+      itemList.push({ id: 'custom', name: 'Custom Items', price: customPrice, quantity: 1, icon: '📦' });
     }
 
     setQuote({
       price: total,
-      item: selectedItem,
-      quantity: formData.quantity,
+      items: itemList,
       estimatedDays: '1-2'
     });
     setStep(4);
@@ -91,12 +114,12 @@ const EnhancedQuoteCalculator = () => {
     setFormData({
       from: '',
       to: '',
-      item: '',
+      selectedItems: [],
       customItem: '',
       customWeight: '0.5',
       customerType: 'regular',
       service: 'standard',
-      quantity: 1
+      shippingOption: 'air'
     });
     setQuote(null);
     setErrors({});
@@ -117,7 +140,7 @@ const EnhancedQuoteCalculator = () => {
           <h1 style={{
             fontSize: '3rem',
             fontWeight: 800,
-            background: 'linear-gradient(135deg, #7fba42 0%, #6ba036 100%)',
+            background: 'linear-gradient(135deg, #127A6A 0%, #aed580 100%)',
             WebkitBackgroundClip: 'text',
             WebkitTextFillColor: 'transparent',
             marginBottom: '0.5rem'
@@ -142,7 +165,7 @@ const EnhancedQuoteCalculator = () => {
                 <motion.div
                   animate={{
                     scale: step === s ? 1.2 : 1,
-                    backgroundColor: step >= s ? '#7fba42' : '#e2e8f0'
+                    backgroundColor: step >= s ? '#127A6A' : '#e2e8f0'
                   }}
                   style={{
                     width: step === s ? '48px' : '40px',
@@ -163,7 +186,7 @@ const EnhancedQuoteCalculator = () => {
                   <div style={{
                     width: '60px',
                     height: '3px',
-                    background: step > s ? '#7fba42' : '#e2e8f0',
+                    background: step > s ? '#127A6A' : '#e2e8f0',
                     borderRadius: '2px',
                     transition: 'all 0.3s ease'
                   }} />
@@ -253,7 +276,7 @@ const EnhancedQuoteCalculator = () => {
                   onClick={handleNext}
                   style={{
                     padding: '1rem 2.5rem',
-                    background: 'linear-gradient(135deg, #7fba42 0%, #6ba036 100%)',
+                    background: 'linear-gradient(135deg, #127A6A 0%, #aed580 100%)',
                     color: 'white',
                     border: 'none',
                     borderRadius: '12px',
@@ -285,7 +308,7 @@ const EnhancedQuoteCalculator = () => {
                 📦 What are you shipping?
               </h2>
               <p style={{ color: '#64748b', marginBottom: '2rem' }}>
-                Select your item or specify a custom one
+                Select multiple items or specify custom ones
               </p>
 
               <div style={{
@@ -294,78 +317,84 @@ const EnhancedQuoteCalculator = () => {
                 gap: '1rem',
                 marginBottom: '2rem'
               }}>
-                {items.map((item) => (
-                  <motion.div
-                    key={item.id}
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    onClick={() => setFormData({...formData, item: item.id})}
-                    style={{
-                      padding: '1.5rem 1rem',
-                      border: formData.item === item.id ? '2px solid #7fba42' : '2px solid #e2e8f0',
-                      borderRadius: '16px',
-                      textAlign: 'center',
-                      cursor: 'pointer',
-                      background: formData.item === item.id ? 'rgba(127, 186, 66, 0.05)' : 'white'
-                    }}
-                  >
-                    <div style={{ fontSize: '2.5rem', marginBottom: '0.5rem' }}>{item.icon}</div>
-                    <div style={{ fontSize: '0.9rem', fontWeight: 600, color: '#334155' }}>{item.name}</div>
-                    <div style={{ fontSize: '0.8rem', color: '#64748b' }}>Br {item.price}</div>
-                  </motion.div>
-                ))}
-
-                <motion.div
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  onClick={() => setFormData({...formData, item: 'other'})}
-                  style={{
-                    padding: '1.5rem 1rem',
-                    border: formData.item === 'other' ? '2px solid #7fba42' : '2px dashed #cbd5e1',
-                    borderRadius: '16px',
-                    textAlign: 'center',
-                    cursor: 'pointer',
-                    background: formData.item === 'other' ? 'rgba(127, 186, 66, 0.05)' : 'white'
-                  }}
-                >
-                  <div style={{ fontSize: '2.5rem', marginBottom: '0.5rem' }}>➕</div>
-                  <div style={{ fontSize: '0.9rem', fontWeight: 600, color: '#334155' }}>Other Item</div>
-                </motion.div>
+                {items.map((item) => {
+                  const selectedItem = formData.selectedItems.find(i => i.id === item.id);
+                  return (
+                    <motion.div
+                      key={item.id}
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                      style={{
+                        padding: '1.5rem 1rem',
+                        border: selectedItem ? '2px solid #127A6A' : '2px solid #e2e8f0',
+                        borderRadius: '16px',
+                        textAlign: 'center',
+                        cursor: 'pointer',
+                        background: selectedItem ? 'rgba(174, 213, 128, 0.05)' : 'white',
+                        position: 'relative'
+                      }}
+                      onClick={() => toggleItem(item.id)}
+                    >
+                      <div style={{ fontSize: '2.5rem', marginBottom: '0.5rem' }}>{item.icon}</div>
+                      <div style={{ fontSize: '0.9rem', fontWeight: 600, color: '#334155' }}>{item.name}</div>
+                      <div style={{ fontSize: '0.8rem', color: '#64748b' }}>Br {item.price}</div>
+                      {selectedItem && (
+                        <div 
+                          style={{
+                            position: 'absolute',
+                            top: '5px',
+                            right: '5px',
+                            background: '#127A6A',
+                            color: 'white',
+                            borderRadius: '50%',
+                            width: '24px',
+                            height: '24px',
+                            fontSize: '0.8rem',
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            fontWeight: 'bold'
+                          }}
+                        >
+                          {selectedItem.quantity}
+                        </div>
+                      )}
+                    </motion.div>
+                  );
+                })}
               </div>
 
-              {formData.item === 'other' && (
-                <motion.div
-                  initial={{ opacity: 0, height: 0 }}
-                  animate={{ opacity: 1, height: 'auto' }}
-                  style={{ marginBottom: '1.5rem' }}
-                >
-                  <input
-                    type="text"
-                    value={formData.customItem}
-                    onChange={(e) => setFormData({...formData, customItem: e.target.value})}
-                    placeholder="Specify your item"
-                    style={{
-                      width: '100%',
-                      padding: '1rem',
-                      fontSize: '1rem',
-                      border: errors.customItem ? '2px solid #ef4444' : '2px solid #e2e8f0',
-                      borderRadius: '12px',
-                      outline: 'none',
-                      marginBottom: '1rem'
-                    }}
-                  />
-                </motion.div>
+              {formData.selectedItems.length > 0 && (
+                <div style={{ marginBottom: '2rem', background: '#f8fafc', padding: '1.5rem', borderRadius: '16px' }}>
+                  <h3 style={{ fontSize: '1rem', fontWeight: 700, marginBottom: '1rem', color: '#334155' }}>Adjust Quantities</h3>
+                  {formData.selectedItems.map(item => (
+                    <div key={item.id} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.75rem' }}>
+                      <span style={{ fontSize: '0.9rem', color: '#334155' }}>{item.icon} {item.name}</span>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+                        <button 
+                          onClick={(e) => { e.stopPropagation(); updateQuantity(item.id, -1); }}
+                          style={{ width: '28px', height: '28px', borderRadius: '50%', border: '1px solid #e2e8f0', background: 'white', cursor: 'pointer' }}
+                        >-</button>
+                        <span style={{ fontWeight: 600, minWidth: '20px', textAlign: 'center' }}>{item.quantity}</span>
+                        <button 
+                          onClick={(e) => { e.stopPropagation(); updateQuantity(item.id, 1); }}
+                          style={{ width: '28px', height: '28px', borderRadius: '50%', border: '1px solid #e2e8f0', background: 'white', cursor: 'pointer' }}
+                        >+</button>
+                      </div>
+                    </div>
+                  ))}
+                </div>
               )}
 
-              <div>
+              <div style={{ marginBottom: '2rem' }}>
                 <label style={{ display: 'block', fontSize: '0.95rem', fontWeight: 600, color: '#334155', marginBottom: '0.5rem' }}>
-                  Quantity
+                  Other / Custom Items
                 </label>
                 <input
-                  type="number"
-                  min="1"
-                  value={formData.quantity}
-                  onChange={(e) => setFormData({...formData, quantity: parseInt(e.target.value) || 1})}
+                  type="text"
+                  value={formData.customItem}
+                  onChange={(e) => setFormData({...formData, customItem: e.target.value})}
+                  placeholder="e.g. Perfume, Eye Glass (Separate with commas)"
                   style={{
                     width: '100%',
                     padding: '1rem',
@@ -375,7 +404,57 @@ const EnhancedQuoteCalculator = () => {
                     outline: 'none'
                   }}
                 />
+                <p style={{ fontSize: '0.8rem', color: '#64748b', marginTop: '0.5rem' }}>
+                  Custom items are priced based on our standard weight rate.
+                </p>
               </div>
+
+              <div style={{ marginBottom: '2rem' }}>
+                <label style={{ display: 'block', fontSize: '0.95rem', fontWeight: 600, color: '#334155', marginBottom: '0.5rem' }}>
+                  🚢 Shipping Option
+                </label>
+                <select
+                  value={formData.shippingOption}
+                  onChange={(e) => setFormData({...formData, shippingOption: e.target.value})}
+                  style={{
+                    width: '100%',
+                    padding: '1rem',
+                    fontSize: '1rem',
+                    border: errors.shippingOption ? '2px solid #ef4444' : '2px solid #e2e8f0',
+                    borderRadius: '12px',
+                    outline: 'none',
+                    background: 'white',
+                    cursor: 'pointer'
+                  }}
+                >
+                  <option value="air">✈️ Air Mail (Get Instant Quote)</option>
+                  <option value="road">🚛 Road Cargo (Call for Pricing)</option>
+                </select>
+                {formData.shippingOption === 'road' && (
+                  <motion.div 
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    style={{ 
+                      marginTop: '1rem', 
+                      padding: '1rem', 
+                      background: 'rgba(18, 122, 106, 0.1)', 
+                      borderRadius: '12px',
+                      border: '1px solid #127A6A',
+                      color: '#127A6A',
+                      fontWeight: 600,
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '0.5rem'
+                    }}
+                  >
+                    <span>📞</span>
+                    For Road Cargo, please contact us at: <a href="tel:8414" style={{ color: '#127A6A', textDecoration: 'underline' }}>8414</a>
+                  </motion.div>
+                )}
+                {errors.shippingOption && <p style={{ color: '#ef4444', fontSize: '0.9rem', marginTop: '0.5rem' }}>{errors.shippingOption}</p>}
+              </div>
+
+              {errors.items && <p style={{ color: '#ef4444', fontSize: '0.9rem', marginBottom: '1rem' }}>{errors.items}</p>}
 
               <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: '2rem', gap: '1rem' }}>
                 <motion.button
@@ -401,7 +480,7 @@ const EnhancedQuoteCalculator = () => {
                   onClick={handleNext}
                   style={{
                     padding: '1rem 2.5rem',
-                    background: 'linear-gradient(135deg, #7fba42 0%, #6ba036 100%)',
+                    background: 'linear-gradient(135deg, #127A6A 0%, #aed580 100%)',
                     color: 'white',
                     border: 'none',
                     borderRadius: '12px',
@@ -442,15 +521,20 @@ const EnhancedQuoteCalculator = () => {
                     <span style={{ color: '#64748b', fontWeight: 500 }}>Route</span>
                     <span style={{ fontWeight: 600, color: '#334155' }}>{formData.from} → {formData.to}</span>
                   </div>
-                  <div style={{ display: 'flex', justifyContent: 'space-between', paddingBottom: '1rem', borderBottom: '1px solid #e2e8f0' }}>
-                    <span style={{ color: '#64748b', fontWeight: 500 }}>Item</span>
-                    <span style={{ fontWeight: 600, color: '#334155' }}>
-                      {formData.item === 'other' ? formData.customItem : items.find(i => i.id === formData.item)?.name}
-                    </span>
-                  </div>
-                  <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                    <span style={{ color: '#64748b', fontWeight: 500 }}>Quantity</span>
-                    <span style={{ fontWeight: 600, color: '#334155' }}>{formData.quantity}</span>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', paddingBottom: '1rem', borderBottom: '1px solid #e2e8f0' }}>
+                    <span style={{ color: '#64748b', fontWeight: 500 }}>Items to Ship</span>
+                    {formData.selectedItems.map((item, idx) => (
+                      <div key={idx} style={{ display: 'flex', justifyContent: 'space-between' }}>
+                        <span style={{ fontWeight: 600, color: '#334155' }}>{item.icon} {item.name} x {item.quantity}</span>
+                        <span style={{ color: '#64748b' }}>Br {item.price * item.quantity}</span>
+                      </div>
+                    ))}
+                    {formData.customItem.trim() && (
+                      <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                        <span style={{ fontWeight: 600, color: '#334155' }}>📦 Custom Item: {formData.customItem}</span>
+                        <span style={{ color: '#64748b' }}>Weight Pricing</span>
+                      </div>
+                    )}
                   </div>
                 </div>
               </div>
@@ -479,7 +563,7 @@ const EnhancedQuoteCalculator = () => {
                   onClick={handleNext}
                   style={{
                     padding: '1rem 2.5rem',
-                    background: 'linear-gradient(135deg, #7fba42 0%, #6ba036 100%)',
+                    background: 'linear-gradient(135deg, #127A6A 0%, #aed580 100%)',
                     color: 'white',
                     border: 'none',
                     borderRadius: '12px',
@@ -514,7 +598,7 @@ const EnhancedQuoteCalculator = () => {
               </div>
 
               <div style={{
-                background: 'linear-gradient(135deg, #7fba42 0%, #6ba036 100%)',
+                background: 'linear-gradient(135deg, #127A6A 0%, #aed580 100%)',
                 padding: '2.5rem',
                 borderRadius: '20px',
                 textAlign: 'center',
@@ -535,7 +619,7 @@ const EnhancedQuoteCalculator = () => {
                     flex: 1,
                     minWidth: '200px',
                     padding: '1rem 2rem',
-                    background: 'linear-gradient(135deg, #7fba42 0%, #6ba036 100%)',
+                    background: 'linear-gradient(135deg, #127A6A 0%, #aed580 100%)',
                     color: 'white',
                     border: 'none',
                     borderRadius: '12px',

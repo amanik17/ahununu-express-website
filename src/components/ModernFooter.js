@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 const ModernFooter = () => {
   const [email, setEmail] = useState('');
@@ -16,28 +17,28 @@ const ModernFooter = () => {
 
   const footerLinks = {
     services: [
-      { label: 'Road Freight', href: '#' },
-      { label: 'Air Freight', href: '#' },
-      { label: 'Warehousing', href: '#' },
-      { label: 'Last Mile Delivery', href: '#' },
-      { label: 'Medical Express', href: '#' },
-      { label: 'B2B Solutions', href: '#' }
+      { label: 'Road Freight', href: '/services' },
+      { label: 'Air Freight', href: '/services' },
+      { label: 'Warehousing', href: '/services' },
+      { label: 'Last Mile Delivery', href: '/services' },
+      { label: 'Medical Express', href: '/services' },
+      { label: 'B2B Solutions', href: '/services' }
     ],
     company: [
-      { label: 'About Us', href: '#' },
-      { label: 'Careers', href: '#' },
-      { label: 'News & Press', href: '#' },
+      { label: 'About Us', href: '/about' },
+      { label: 'Careers', href: '/careers' },
+      { label: 'News & Press', href: '/news' },
       { label: 'Sustainability', href: '#' },
-      { label: 'Partners', href: '#' },
-      { label: 'Contact', href: '#' }
+      { label: 'Partners', href: '/partners' },
+      { label: 'Contact', href: '/contact' }
     ],
     support: [
-      { label: 'Track Package', href: '#' },
-      { label: 'Get Quote', href: '#' },
-      { label: 'FAQs', href: '#' },
+      { label: 'Track Package', href: '/tracking' },
+      { label: 'Get Quote', href: '/quote' },
+      { label: 'FAQs', href: '/contact' },
       { label: 'Shipping Guide', href: '#' },
       { label: 'Claims', href: '#' },
-      { label: 'Feedback', href: '#' }
+      { label: 'Feedback', href: '/contact' }
     ],
     legal: [
       { label: 'Terms of Service', href: '#' },
@@ -46,22 +47,6 @@ const ModernFooter = () => {
       { label: 'Accessibility', href: '#' }
     ]
   };
-
-  const socialLinks = [
-    { icon: '📘', label: 'Facebook', href: '#', color: '#1877F2' },
-    { icon: '🐦', label: 'Twitter', href: '#', color: '#1DA1F2' },
-    { icon: '💼', label: 'LinkedIn', href: '#', color: '#0A66C2' },
-    { icon: '📸', label: 'Instagram', href: '#', color: '#E4405F' },
-    { icon: '📱', label: 'TikTok', href: '#', color: '#000000' },
-    { icon: '▶️', label: 'YouTube', href: '#', color: '#FF0000' }
-  ];
-
-  const trustBadges = [
-    { icon: '✅', text: 'ISO 9001 Certified' },
-    { icon: '🔒', text: 'Secure Payments' },
-    { icon: '⭐', text: '4.9/5 Rating' },
-    { icon: '🏆', text: 'Award Winning' }
-  ];
 
   return (
     <footer style={{
@@ -72,7 +57,7 @@ const ModernFooter = () => {
       <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 2rem' }}>
         {/* Newsletter Section */}
         <div style={{
-          background: 'linear-gradient(135deg, #7fba42 0%, #6ba036 100%)',
+          background: 'linear-gradient(135deg, #127A6A 0%, #0e6356 100%)',
           borderRadius: '24px',
           padding: '3rem',
           marginBottom: '4rem',
@@ -143,7 +128,7 @@ const ModernFooter = () => {
                     style={{
                       padding: '1rem 2rem',
                       background: 'white',
-                      color: '#7fba42',
+                      color: '#127A6A',
                       border: 'none',
                       borderRadius: '12px',
                       fontSize: '1rem',
@@ -197,47 +182,17 @@ const ModernFooter = () => {
           {/* Company Info */}
           <div>
             <div style={{
-              display: 'flex',
-              alignItems: 'center',
-              gap: '0.5rem',
-              fontSize: '1.8rem',
-              fontWeight: 800,
-              marginBottom: '1rem',
-              color: '#7fba42'
+              marginBottom: '1.5rem',
             }}>
-              <span>🚚</span>
-              <span>Ahununu Express</span>
+              <img src="/assets/logo_footer.png" alt="Ahununu Logistics Logo" style={{ height: '60px', objectFit: 'contain' }} />
             </div>
             <p style={{
               color: '#94a3b8',
               lineHeight: 1.6,
               marginBottom: '1.5rem'
             }}>
-              Ethiopia's trusted logistics partner, delivering excellence across 85+ cities with speed, security, and reliability.
+              Ethiopia's trusted logistics partner, delivering excellence across 27+ branches with speed, security, and reliability.
             </p>
-
-            {/* Trust Badges */}
-            <div style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(2, 1fr)',
-              gap: '0.75rem'
-            }}>
-              {trustBadges.map((badge, index) => (
-                <div
-                  key={index}
-                  style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: '0.5rem',
-                    fontSize: '0.85rem',
-                    color: '#94a3b8'
-                  }}
-                >
-                  <span>{badge.icon}</span>
-                  <span>{badge.text}</span>
-                </div>
-              ))}
-            </div>
           </div>
 
           {/* Services */}
@@ -253,19 +208,19 @@ const ModernFooter = () => {
             <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
               {footerLinks.services.map((link, index) => (
                 <li key={index} style={{ marginBottom: '0.75rem' }}>
-                  <a
-                    href={link.href}
+                  <Link
+                    to={link.href}
                     style={{
                       color: '#94a3b8',
                       textDecoration: 'none',
                       transition: 'color 0.2s ease',
                       display: 'inline-block'
                     }}
-                    onMouseOver={(e) => e.target.style.color = '#7fba42'}
+                    onMouseOver={(e) => e.target.style.color = '#aed580'}
                     onMouseOut={(e) => e.target.style.color = '#94a3b8'}
                   >
                     {link.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -284,19 +239,19 @@ const ModernFooter = () => {
             <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
               {footerLinks.company.map((link, index) => (
                 <li key={index} style={{ marginBottom: '0.75rem' }}>
-                  <a
-                    href={link.href}
+                  <Link
+                    to={link.href}
                     style={{
                       color: '#94a3b8',
                       textDecoration: 'none',
                       transition: 'color 0.2s ease',
                       display: 'inline-block'
                     }}
-                    onMouseOver={(e) => e.target.style.color = '#7fba42'}
+                    onMouseOver={(e) => e.target.style.color = '#aed580'}
                     onMouseOut={(e) => e.target.style.color = '#94a3b8'}
                   >
                     {link.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -315,19 +270,19 @@ const ModernFooter = () => {
             <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
               {footerLinks.support.map((link, index) => (
                 <li key={index} style={{ marginBottom: '0.75rem' }}>
-                  <a
-                    href={link.href}
+                  <Link
+                    to={link.href}
                     style={{
                       color: '#94a3b8',
                       textDecoration: 'none',
                       transition: 'color 0.2s ease',
                       display: 'inline-block'
                     }}
-                    onMouseOver={(e) => e.target.style.color = '#7fba42'}
+                    onMouseOver={(e) => e.target.style.color = '#aed580'}
                     onMouseOut={(e) => e.target.style.color = '#94a3b8'}
                   >
                     {link.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -347,11 +302,17 @@ const ModernFooter = () => {
               📞 Call Us
             </h5>
             <p style={{ color: '#94a3b8', marginBottom: '0.25rem' }}>
-              <a href="tel:+251970025656" style={{ color: '#7fba42', textDecoration: 'none' }}>
+              <a href="tel:+251970025656" style={{ color: '#aed580', textDecoration: 'none', display: 'block' }}>
                 +251 970 025656
               </a>
+              <a href="tel:+251953563356" style={{ color: '#aed580', textDecoration: 'none', display: 'block' }}>
+                +251 953 563356
+              </a>
+              <a href="tel:8414" style={{ color: '#aed580', textDecoration: 'none', display: 'block', fontWeight: 'bold' }}>
+                Short Code: 8414
+              </a>
             </p>
-            <p style={{ color: '#94a3b8', fontSize: '0.9rem' }}>Mon-Sat: 8AM-6PM, Sun: 9AM-2PM</p>
+            <p style={{ color: '#94a3b8', fontSize: '0.9rem' }}>Mon-Sat: 8:30 AM-7PM, Sun: 8:30 AM-12:30PM</p>
           </div>
 
           <div>
@@ -359,8 +320,8 @@ const ModernFooter = () => {
               📧 Email Us
             </h5>
             <p style={{ color: '#94a3b8', marginBottom: '0.25rem' }}>
-              <a href="mailto:info@ahununuexpress.com" style={{ color: '#7fba42', textDecoration: 'none' }}>
-                info@ahununuexpress.com
+              <a href="mailto:info@ahununu.com" style={{ color: '#aed580', textDecoration: 'none' }}>
+                info@ahununu.com
               </a>
             </p>
             <p style={{ color: '#94a3b8', fontSize: '0.9rem' }}>We reply within 24 hours</p>
@@ -371,51 +332,14 @@ const ModernFooter = () => {
               📍 Visit Us
             </h5>
             <p style={{ color: '#94a3b8', marginBottom: '0.25rem' }}>
-              22 Golagol, Addis Ababa
+              <a href="https://maps.app.goo.gl/cFxkaWWpgfkZPTFv8" target="_blank" rel="noopener noreferrer" style={{ color: '#aed580', textDecoration: 'none' }}>
+                22 Golagol, Addis Ababa Ethiopia
+              </a>
             </p>
-            <p style={{ color: '#94a3b8', fontSize: '0.9rem' }}>Ethiopia</p>
-          </div>
-
-          <div>
-            <h5 style={{ fontSize: '1rem', fontWeight: 600, marginBottom: '0.75rem', color: '#cbd5e1' }}>
-              📱 Download App
-            </h5>
-            <div style={{ display: 'flex', gap: '0.5rem' }}>
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                style={{
-                  padding: '0.5rem 1rem',
-                  background: '#334155',
-                  color: 'white',
-                  border: '1px solid #475569',
-                  borderRadius: '8px',
-                  fontSize: '0.85rem',
-                  cursor: 'pointer'
-                }}
-              >
-                🍎 iOS
-              </motion.button>
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                style={{
-                  padding: '0.5rem 1rem',
-                  background: '#334155',
-                  color: 'white',
-                  border: '1px solid #475569',
-                  borderRadius: '8px',
-                  fontSize: '0.85rem',
-                  cursor: 'pointer'
-                }}
-              >
-                🤖 Android
-              </motion.button>
-            </div>
           </div>
         </div>
 
-        {/* Social Links & Bottom Bar */}
+        {/* Bottom Bar & Legal Links */}
         <div style={{
           display: 'flex',
           justifyContent: 'space-between',
@@ -424,40 +348,9 @@ const ModernFooter = () => {
           flexWrap: 'wrap',
           gap: '1.5rem'
         }}>
-          {/* Social Links */}
-          <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
-            {socialLinks.map((social, index) => (
-              <motion.a
-                key={index}
-                href={social.href}
-                whileHover={{ scale: 1.2, rotate: 5 }}
-                whileTap={{ scale: 0.9 }}
-                style={{
-                  width: '48px',
-                  height: '48px',
-                  background: '#334155',
-                  borderRadius: '12px',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  fontSize: '1.5rem',
-                  textDecoration: 'none',
-                  border: '1px solid #475569',
-                  transition: 'all 0.3s ease'
-                }}
-                onMouseOver={(e) => {
-                  e.currentTarget.style.background = social.color;
-                  e.currentTarget.style.borderColor = social.color;
-                }}
-                onMouseOut={(e) => {
-                  e.currentTarget.style.background = '#334155';
-                  e.currentTarget.style.borderColor = '#475569';
-                }}
-                aria-label={social.label}
-              >
-                {social.icon}
-              </motion.a>
-            ))}
+          {/* Copyright Info */}
+          <div style={{ color: '#94a3b8', fontSize: '0.9rem' }}>
+            © {new Date().getFullYear()} Ahununu Logistics. All rights reserved.
           </div>
 
           {/* Legal Links */}
@@ -468,37 +361,35 @@ const ModernFooter = () => {
             fontSize: '0.9rem'
           }}>
             {footerLinks.legal.map((link, index) => (
-              <a
+              <Link
                 key={index}
-                href={link.href}
+                to={link.href}
                 style={{
                   color: '#94a3b8',
                   textDecoration: 'none',
                   transition: 'color 0.2s ease'
                 }}
-                onMouseOver={(e) => e.target.style.color = '#7fba42'}
+                onMouseOver={(e) => e.target.style.color = '#aed580'}
                 onMouseOut={(e) => e.target.style.color = '#94a3b8'}
               >
                 {link.label}
-              </a>
+              </Link>
             ))}
           </div>
         </div>
 
-        {/* Copyright */}
+        {/* Bottom Tagline */}
         <div style={{
           borderTop: '1px solid #334155',
           paddingTop: '2rem',
           paddingBottom: '2rem',
           textAlign: 'center',
           color: '#94a3b8',
-          fontSize: '0.9rem'
+          fontSize: '0.85rem',
+          opacity: 0.8
         }}>
-          <p style={{ marginBottom: '0.5rem' }}>
-            © {new Date().getFullYear()} Ahununu Express. All rights reserved.
-          </p>
-          <p style={{ fontSize: '0.85rem', opacity: 0.8 }}>
-            Made with 💚 in Ethiopia | Proudly serving 85+ cities nationwide
+          <p>
+            Made with 💚 in Ethiopia | Proudly serving 27+ branches nationwide
           </p>
         </div>
       </div>

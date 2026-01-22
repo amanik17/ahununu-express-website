@@ -8,9 +8,9 @@ const ModernAboutPage = () => {
     {
       year: 2014,
       title: 'Company Founded',
-      description: 'Ahununu Express was established in Addis Ababa with a vision to revolutionize logistics in Ethiopia.',
+      description: 'Ahununu Logistics was established in Addis Ababa with a vision to revolutionize logistics in Ethiopia.',
       icon: '🚀',
-      color: '#7fba42'
+      color: '#127A6A'
     },
     {
       year: 2016,
@@ -28,9 +28,9 @@ const ModernAboutPage = () => {
     },
     {
       year: 2020,
-      title: 'ISO Certification',
-      description: 'Achieved ISO 9001:2015 certification, demonstrating our commitment to quality.',
-      icon: '🏆',
+      title: 'Global Partnerships',
+      description: 'Established strategic partnerships with international logistics leaders to enhance our cross-border capabilities.',
+      icon: '🤝',
       color: '#E94F64'
     },
     {
@@ -43,7 +43,7 @@ const ModernAboutPage = () => {
     {
       year: 2024,
       title: 'Regional Leader',
-      description: 'Became Ethiopia\'s #1 express service provider with 85+ cities coverage.',
+      description: 'Became Ethiopia\'s #1 logistics service provider with 27+ branches nationwide.',
       icon: '⭐',
       color: '#8B5CF6'
     }
@@ -54,7 +54,7 @@ const ModernAboutPage = () => {
       icon: '🎯',
       title: 'Reliability & Trust',
       description: 'We deliver on our promises, every time. Your shipment is our responsibility.',
-      color: '#7fba42'
+      color: '#127A6A'
     },
     {
       icon: '💚',
@@ -89,11 +89,11 @@ const ModernAboutPage = () => {
   ];
 
   const stats = [
-    { number: '10+', label: 'Years Experience', icon: '📅', color: '#7fba42' },
-    { number: '85+', label: 'Cities Covered', icon: '🏙️', color: '#4A90E2' },
-    { number: '500+', label: 'Vehicles', icon: '🚛', color: '#F5A623' },
-    { number: '1000+', label: 'Team Members', icon: '👥', color: '#E94F64' },
-    { number: '15K+', label: 'Daily Deliveries', icon: '📦', color: '#10B981' },
+    { number: '8+', label: 'Years Experience', icon: '📅', color: '#127A6A' },
+    { number: '27+', label: 'Branches', icon: '🏙️', color: '#aed580' },
+    { number: '500+', label: 'Vehicles', icon: '🚛', color: '#aed580' },
+    { number: '150+', label: 'Team Members', icon: '👥', color: '#E94F64' },
+    { number: '1.5K+', label: 'Daily Deliveries', icon: '📦', color: '#10B981' },
     { number: '98%', label: 'Customer Satisfaction', icon: '⭐', color: '#8B5CF6' }
   ];
 
@@ -103,7 +103,7 @@ const ModernAboutPage = () => {
       role: 'Chief Executive Officer',
       image: '👨‍💼',
       bio: '20+ years in logistics and supply chain management',
-      color: '#7fba42'
+      color: '#127A6A'
     },
     {
       name: 'Tigist Haile',
@@ -135,7 +135,7 @@ const ModernAboutPage = () => {
     }}>
       {/* Hero Section */}
       <div style={{
-        background: 'linear-gradient(135deg, #7fba42 0%, #6ba036 100%)',
+        background: 'linear-gradient(135deg, #127A6A 0%, #0e6356 100%)',
         padding: '8rem 2rem 6rem',
         position: 'relative',
         overflow: 'hidden'
@@ -162,7 +162,7 @@ const ModernAboutPage = () => {
               marginBottom: '1rem',
               textShadow: '0 4px 12px rgba(0,0,0,0.1)'
             }}>
-              About Ahununu Express
+              About Ahununu Logistics
             </h1>
             <p style={{
               fontSize: '1.5rem',
@@ -251,7 +251,7 @@ const ModernAboutPage = () => {
             <div style={{
               width: '80px',
               height: '80px',
-              background: 'linear-gradient(135deg, #7fba42 0%, #6ba036 100%)',
+              background: 'linear-gradient(135deg, #127A6A 0%, #0e6356 100%)',
               borderRadius: '20px',
               display: 'flex',
               alignItems: 'center',

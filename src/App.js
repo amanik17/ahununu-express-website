@@ -14,6 +14,7 @@ const News = React.lazy(() => import('./components/News'));
 const EnhancedContactForm = React.lazy(() => import('./components/EnhancedContactForm'));
 const Partners = React.lazy(() => import('./components/Partners'));
 const WarehousePage = React.lazy(() => import('./pages/WarehousePage'));
+const BranchesPage = React.lazy(() => import('./components/BranchesPage'));
 
 import ModernFooter from './components/ModernFooter';
 import './styles/App.css';
@@ -85,6 +86,7 @@ const App = () => {
                 <Route path="/careers" element={<Careers />} />
                 <Route path="/news" element={<News />} />
                 <Route path="/contact" element={<EnhancedContactForm />} />
+                <Route path="/branches" element={<BranchesPage />} />
                 <Route path="/partners" element={<Partners />} />
                 <Route path="/warehouse" element={<WarehousePage />} />
                 <Route path="/home" element={<Navigate to="/" replace />} />
