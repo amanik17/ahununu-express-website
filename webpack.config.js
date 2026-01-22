@@ -3,6 +3,7 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 const { InjectManifest } = require('workbox-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 require('dotenv').config({ path: './.env' });
 
 const isAnalyze = process.env.ANALYZE === 'true';
@@ -88,6 +89,17 @@ module.exports = {
         minifyCSS: true,
         minifyURLs: true,
       } : false,
+    }),
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: 'public',
+          to: '.',
+          globOptions: {
+            ignore: ['**/index.html'], // HtmlWebpackPlugin handles this
+          },
+        },
+      ],
     }),
     ...(isAnalyze ? [new BundleAnalyzerPlugin()] : []),
   ],
