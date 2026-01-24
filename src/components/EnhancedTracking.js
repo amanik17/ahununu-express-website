@@ -1,5 +1,6 @@
- import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { fetchTrackingStatus } from '../services/trackingService';
 
 const EnhancedTracking = () => {
   const [trackingNumber, setTrackingNumber] = useState('');
@@ -19,60 +20,7 @@ const EnhancedTracking = () => {
     }
   }, []);
 
-  const mockTrackingData = {
-    'AWB00000000': {
-      status: 'In Transit',
-      estimatedDelivery: '2025-12-03',
-      currentLocation: 'Addis Ababa Distribution Center',
-      progress: 60,
-      timeline: [
-        {
-          status: 'Order Placed',
-          location: 'Addis Ababa',
-          date: '2025-12-01 09:30',
-          completed: true,
-          icon: '📦'
-        },
-        {
-          status: 'Package Picked Up',
-          location: 'Addis Ababa Hub',
-          date: '2025-12-01 14:20',
-          completed: true,
-          icon: '🚚'
-        },
-        {
-          status: 'In Transit',
-          location: 'Addis Ababa Distribution Center',
-          date: '2025-12-02 08:15',
-          completed: true,
-          icon: '📍'
-        },
-        {
-          status: 'Out for Delivery',
-          location: 'Local Delivery Center',
-          date: 'Expected: 2025-12-03 10:00',
-          completed: false,
-          icon: '🚛'
-        },
-        {
-          status: 'Delivered',
-          location: 'Destination',
-          date: 'Expected: 2025-12-03 17:00',
-          completed: false,
-          icon: '✅'
-        }
-      ],
-      packageDetails: {
-        weight: '2.5 kg',
-        dimensions: '30x20x15 cm',
-        service: 'Express Delivery',
-        sender: 'Abebe Bikila',
-        recipient: 'Bahir Dar'
-      }
-    }
-  };
-
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (!trackingNumber.trim()) {
       setError('Please enter a tracking number');
@@ -83,12 +31,14 @@ const EnhancedTracking = () => {
     setError(null);
     setResult(null);
 
-    setTimeout(() => {
-      const data = mockTrackingData[trackingNumber.trim()];
+    try {
+      // Fetch tracking data from API
+      const data = await fetchTrackingStatus(trackingNumber.trim());
       
       if (data) {
         setResult(data);
         
+        // Save to recent searches
         const newSearch = {
           number: trackingNumber.trim(),
           date: new Date().toISOString()
@@ -100,9 +50,12 @@ const EnhancedTracking = () => {
       } else {
         setError('Tracking number not found. Please check and try again.');
       }
-      
+    } catch (err) {
+      console.error('Tracking error:', err);
+      setError(err.message || 'Failed to fetch tracking information. Please try again.');
+    } finally {
       setIsLoading(false);
-    }, 1500);
+    }
   };
 
   const handleRecentSearch = (number) => {
