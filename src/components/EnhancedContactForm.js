@@ -30,6 +30,7 @@ const EnhancedContactForm = () => {
       title: 'Phone',
       details: '+251 970 025656',
       subtext: 'Mon-Sat, 8:30 AM-7PM',
+      extraDetails: ['Short Code: 8414', '+251 953 563356'],
       color: '#4A90E2'
     },
     {
@@ -231,6 +232,16 @@ const EnhancedContactForm = () => {
               }}>
                 {method.details}
               </p>
+              {method.extraDetails && method.extraDetails.map((detail, i) => (
+                <p key={i} style={{
+                  fontSize: '1rem',
+                  fontWeight: 600,
+                  color: method.color,
+                  marginBottom: '0.25rem'
+                }}>
+                  {detail}
+                </p>
+              ))}
               <p style={{ fontSize: '0.9rem', color: '#64748b' }}>
                 {method.subtext}
               </p>
