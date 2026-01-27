@@ -12,11 +12,33 @@ const BranchesPage = () => {
         phone: '0970025656, 0953563356, 8414'
       }
     },
-    { name: 'Adama' }, { name: 'Arbaminch' }, { name: 'Assossa' }, { name: 'Bahirdar' },
-    { name: 'Debre markos' }, { name: 'Debrebrhan' }, { name: 'Dessie' }, { name: 'Dilla' }, { name: 'Diredewa' },
-    { name: 'Gambella' }, { name: 'Gonder' }, { name: 'Harrar' }, { name: 'Hawassa' }, { name: 'Hossana' }, { name: 'Jijiga' },
-    { name: 'Jimma' }, { name: 'Kombolcha' }, { name: 'Logia' }, { name: 'Mekelle' }, { name: 'Nekemte' }, { name: 'Shashemene' },
-    { name: 'Shire' }, { name: 'Sodo' }, { name: 'Welkite' }, { name: 'Kera' }, { name: 'Merkato' }, { name: 'Axum' }
+    { name: 'Adama', details: { phone: '0970045656' } },
+    { name: 'Arba Minch', details: { phone: '0906560056' } },
+    { name: 'Assosa', details: { phone: '0917675656' } },
+    { name: 'Bahirdar', details: { phone: '0907563356' } },
+    { name: 'Debre Berhan', details: { phone: '0904563356' } },
+    { name: 'Debre Markos', details: { phone: '0916815656' } },
+    { name: 'Dessie', details: { phone: '0970525656' } },
+    { name: 'Dilla', details: { phone: '0927569956' } },
+    { name: 'Dire Dawa', details: { phone: '0970075656' } },
+    { name: 'Gambela Agent', details: { phone: '0903005656' } },
+    { name: 'Gondar', details: { phone: '0582117525, 0970535656' } },
+    { name: 'Harer', details: { phone: '0905563356' } },
+    { name: 'Hawassa', details: { phone: '0462127394, 0970055656' } },
+    { name: 'Hossana', details: { phone: '0902563356' } },
+    { name: 'Jijiga Agent', details: { phone: '0902232020' } },
+    { name: 'Jimma', details: { phone: '0970085656' } },
+    { name: 'Kera', details: { phone: '0938565556' } },
+    { name: 'Kombolcha', details: { phone: '0917875656' } },
+    { name: 'Logia/Semera', details: { phone: '0903563356' } },
+    { name: 'Mekelle', details: { phone: '0925563356' } },
+    { name: 'Neketmte', details: { phone: '0927564456' } },
+    { name: 'Merkato', details: { phone: '0903568856' } },
+    { name: 'Shashemene', details: { phone: '0908568856' } },
+    { name: 'Shire', details: { phone: '0905568856' } },
+    { name: 'Wolayta sodo', details: { phone: '0906563356' } },
+    { name: 'Wolkite', details: { phone: '0927567756' } },
+    { name: 'Axum' }
   ];
 
   return (
