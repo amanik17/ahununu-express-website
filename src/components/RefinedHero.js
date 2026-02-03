@@ -302,12 +302,6 @@ const RefinedHero = () => {
                   4.9/5 from 2,000+ reviews
                 </span>
               </div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                <span style={{ fontSize: '1.5rem' }}>✅</span>
-                <span style={{ fontSize: '0.9rem', color: '#64748b' }}>
-                  ISO 9001 Certified
-                </span>
-              </div>
             </div>
           </motion.div>
 
