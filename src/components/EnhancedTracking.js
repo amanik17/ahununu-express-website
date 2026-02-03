@@ -122,7 +122,7 @@ const EnhancedTracking = () => {
                 type="text"
                 value={trackingNumber}
                 onChange={(e) => setTrackingNumber(e.target.value)}
-                placeholder="Enter tracking number (e.g., AWB00000000)"
+                placeholder="Enter tracking number (e.g., AWB00000000 or GWB00000000)"
                 onKeyPress={(e) => e.key === 'Enter' && handleSubmit(e)}
                 style={{
                   flex: 1,

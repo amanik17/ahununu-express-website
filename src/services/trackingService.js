@@ -135,7 +135,7 @@ export async function fetchTrackingStatus(trackingNumber) {
     return transformTrackingData(apiData, trimmedNumber);
   } catch (err) {
     // If API fails and it's a demo tracking number, return mock data
-    if (trimmedNumber === 'AWB123456789' || trimmedNumber === 'AWB00000000') {
+    if (trimmedNumber === 'AWB123456789' || trimmedNumber === 'AWB00000000' || trimmedNumber === 'GWB00000000') {
       console.warn('API unavailable, using mock data for demo');
       return getMockTrackingData(trimmedNumber);
     }
